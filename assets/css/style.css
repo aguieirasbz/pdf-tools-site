@@ -1,0 +1,310 @@
+/* Reset Básico e Fontes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: #e53935; /* Vermelho inspirado no iLovePDF */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Grid de Ferramentas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tool-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.tool-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+}
+
+.tool-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e53935;
+}
+
+/* Página de Ferramenta */
+.tool-page .main-header {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+.tool-page .main-header h1 {
+    font-size: 2rem;
+}
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.tool-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.file-drop-zone {
+    border: 3px dashed #ddd;
+    border-radius: 8px;
+    padding: 50px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-drop-zone.dragover {
+    background-color: #e8f0fe; /* Azul claro ao arrastar */
+    border-color: #4285f4;
+}
+
+.file-drop-zone p {
+    margin-bottom: 10px;
+}
+
+/* Esconde o input de arquivo padrão */
+#file-input {
+    display: none;
+}
+
+.file-input-label {
+    background-color: #e53935;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.file-input-label:hover {
+    background-color: #c62828;
+}
+
+.file-list {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.file-list-item {
+    background-color: #f1f3f4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.tool-options {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.tool-options input, .tool-options select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.action-button {
+    background-color: #28a745; /* Verde para ação positiva */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+.action-button:not(:disabled):hover {
+    background-color: #218838;
+}
+
+.status {
+    margin-top: 20px;
+    font-weight: 500;
+}
+.status.error {
+    color: #e53935;
+}
+
+/* Placeholders de Anúncios */
+.ad-placeholder-leaderboard {
+    width: 100%;
+    height: 90px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: #6c757d;
+}
+.ad-placeholder-large, .ad-placeholder-medium {
+    width: 100%;
+    max-width: 728px;
+    height: 250px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    color: #6c757d;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.main-footer a {
+    color: #adb5bd;
+    text-decoration: none;
+}
+
+/* ========================================= */
+/* CSS ADICIONAL PARA LAYOUT E NOVA SEÇÃO    */
+/* ========================================= */
+
+/* Estrutura de Grid Principal */
+.main-layout-grid {
+    display: grid;
+    grid-template-columns: 160px 1fr 160px; /* Colunas: Esquerda | Conteúdo | Direita */
+    gap: 30px; /* Espaço entre as colunas */
+    max-width: 1440px; /* Largura máxima para o layout todo */
+    margin: 0 auto; /* Centraliza o layout na página */
+    padding: 0 20px;
+}
+
+/* Placeholder para os banners verticais */
+.ad-placeholder-skyscraper {
+    width: 160px;
+    height: 600px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Nova Seção "Por que nos escolher?" */
+.why-us {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grid responsivo */
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-item {
+    color: #555;
+}
+
+.feature-item svg {
+    color: #e53935; /* Cor vermelha principal nos ícones */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Responsividade para o novo layout */
+/* Em telas menores que 1200px, escondemos os banners e centralizamos o conteúdo */
+@media (max-width: 1200px) {
+    .main-layout-grid {
+        grid-template-columns: 1fr; /* Volta a ter uma única coluna */
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        display: none; /* Esconde as barras laterais */
+    }
+
+    .why-us {
+        padding: 30px 20px;
+    }
+}

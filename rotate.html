@@ -1,0 +1,65 @@
+<!-- rotate.html - conteúdo de exemplo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girar PDF - PDF Power Tools</title>
+    <meta name="description" content="Gire as páginas do seu documento PDF para a orientação correta. Processamento seguro e local no seu navegador.">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+</head>
+<body class="tool-page">
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Voltar para todas as ferramentas</a>
+            <h1>Girar PDF</h1>
+            <p>Selecione um arquivo PDF e escolha o ângulo de rotação.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <div id="file-drop-zone" class="file-drop-zone">
+                <p>Arraste e solte o arquivo PDF aqui</p>
+                <p>ou</p>
+                <input type="file" id="file-input" accept=".pdf">
+                <label for="file-input" class="file-input-label">Selecione o Arquivo</label>
+            </div>
+
+            <div id="file-list" class="file-list"></div>
+            
+            <div class="tool-options">
+                <label for="rotate-angle"><strong>Escolha a rotação:</strong></label>
+                <select id="rotate-angle">
+                    <option value="90">90 graus (sentido horário)</option>
+                    <option value="180">180 graus</option>
+                    <option value="270">270 graus (sentido anti-horário)</option>
+                </select>
+            </div>
+
+            <button id="action-button" class="action-button" disabled>Girar PDF</button>
+            
+            <div id="status" class="status"></div>
+        </div>
+
+        <div class="ad-placeholder-medium">Seu anúncio AdSense aqui</div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 PDF Power Tools. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

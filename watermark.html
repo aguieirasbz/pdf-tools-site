@@ -1,0 +1,68 @@
+<!-- watermark.html - conteúdo de exemplo -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Marca d'Água em PDF - PDF Power Tools</title>
+    <meta name="description" content="Adicione um texto de marca d'água personalizável em todas as páginas do seu arquivo PDF. Seguro, online e gratuito.">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+</head>
+<body class="tool-page">
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Voltar para todas as ferramentas</a>
+            <h1>Adicionar Marca d'Água</h1>
+            <p>Insira um texto personalizado como marca d'água no seu PDF.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <div id="file-drop-zone" class="file-drop-zone">
+                <p>Arraste e solte o arquivo PDF aqui</p>
+                <p>ou</p>
+                <input type="file" id="file-input" accept=".pdf">
+                <label for="file-input" class="file-input-label">Selecione o Arquivo</label>
+            </div>
+
+            <div id="file-list" class="file-list"></div>
+            
+            <div class="tool-options">
+                <label for="watermark-text">Texto da Marca d'Água:</label>
+                <input type="text" id="watermark-text" placeholder="Ex: CONFIDENCIAL">
+
+                <label for="watermark-size">Tamanho do Texto (em pontos):</label>
+                <input type="number" id="watermark-size" min="8" max="256" step="1" value="50">
+                
+                <label for="watermark-color">Cor do Texto:</label>
+                <input type="color" id="watermark-color" value="#808080"> <label for="watermark-opacity">Opacidade (de 0.1 a 1.0):</label>
+                <input type="number" id="watermark-opacity" min="0.1" max="1.0" step="0.1" value="0.5">
+            </div>
+
+            <button id="action-button" class="action-button" disabled>Adicionar Marca d'Água</button>
+            
+            <div id="status" class="status"></div>
+        </div>
+
+        <div class="ad-placeholder-medium">Seu anúncio AdSense aqui</div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 PDF Power Tools. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
