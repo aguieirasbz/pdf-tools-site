@@ -1,89 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Power Tools - Junte, Divida e Edite PDFs Online e de Graça</title>
+    <meta name="description" content="Ferramentas PDF online e gratuitas. Junte, divida, gire páginas, converta imagens para PDF e adicione marcas d'água sem precisar de upload. 100% seguro e privado.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.0.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.0.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.0.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <header class="main-header">
+        <div class="container">
+            <h1>PDF Power Tools</h1>
+            <p>Suas ferramentas para PDF, 100% seguras e no seu navegador.</p>
+        </div>
+    </header>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div class="main-layout-grid">
+        <aside class="sidebar-left ad-placeholder-skyscraper">
+            Seu anúncio AdSense Vertical (160x600) aqui
+        </aside>
+
+        <main class="container">
+
+            <div class="ad-placeholder-leaderboard">
+                Seu novo anúncio AdSense Horizontal aqui
+            </div>
+            <section class="tools-grid">
+                <a href="merge.html" class="tool-card">
+                    <img src="assets/images/merge-icon.svg" alt="Ícone de Juntar PDF">
+                    <h2>Juntar PDF</h2>
+                    <p>Combine vários arquivos PDF em um único documento.</p>
+                </a>
+                <a href="split.html" class="tool-card">
+                    <img src="assets/images/split-icon.svg" alt="Ícone de Dividir PDF">
+                    <h2>Dividir PDF</h2>
+                    <p>Extraia uma ou mais páginas de um arquivo PDF.</p>
+                </a>
+                <a href="rotate.html" class="tool-card">
+                    <img src="assets/images/rotate-icon.svg" alt="Ícone de Girar PDF">
+                    <h2>Girar PDF</h2>
+                    <p>Gire todas as páginas do seu PDF de uma só vez.</p>
+                </a>
+                <a href="image-to-pdf.html" class="tool-card">
+                    <img src="assets/images/image-to-pdf.svg" alt="Ícone de Imagem para PDF">
+                    <h2>Imagens para PDF</h2>
+                    <p>Converta imagens JPG e PNG em um arquivo PDF.</p>
+                </a>
+                <a href="watermark.html" class="tool-card">
+                    <img src="assets/images/watermark-icon.svg" alt="Ícone de Marca d'Água">
+                    <h2>Adicionar Marca d'Água</h2>
+                    <p>Coloque um texto como marca d'água em seu PDF.</p>
+                </a>
+                 <a href="split.html" class="tool-card">
+                    <img src="assets/images/extract-icon.svg" alt="Ícone de Extrair Páginas">
+                    <h2>Extrair Páginas</h2>
+                    <p>Selecione e salve apenas as páginas que você precisa.</p>
+                </a>
+            </section>
+
+            <section class="why-us">
+                <h2 class="section-title">Privacidade e Segurança no Nível Máximo</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12H14a2 2 0 0 1-2-2V2.5L2.5 12H10a2 2 0 0 1 2 2v7.5L21.5 12z"></path></svg>
+                        <h3>Processamento 100% Local</h3>
+                        <p>Toda a manipulação dos seus PDFs acontece diretamente no seu computador. Seus arquivos não são enviados pela internet.</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                        <h3>Sem Upload, Sem Espera</h3>
+                        <p>Como não há envio de arquivos para um servidor, o processo é muito mais rápido e seus dados confidenciais permanecem com você.</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6H4l2 12h12l2-12z"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M4 6l-2-4h20l-2 4"></path><path d="M12 6V4"></path></svg>
+                        <h3>Descarte Garantido</h3>
+                        <p>Ao fechar a página, todos os dados são automaticamente apagados. Não guardamos cópias ou qualquer resquício dos seus documentos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                        <h3>A Chave está com Você</h3>
+                        <p>A segurança é inerente ao nosso design. Se o arquivo nunca sai da sua máquina, ele nunca fica exposto. Simples assim.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar-right ad-placeholder-skyscraper">
+            Seu anúncio AdSense Vertical (160x600) aqui
+        </aside>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 PDF Power Tools. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+</body>
 </html>
