@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pdfDoc = await PDFDocument.load(pdfBytes);
         pdfDoc.getPages().forEach(page => {
             const currentRotation = page.getRotation().angle;
-            page.setRotation({ angle: (currentRotation + angle) % 360 });
+          page.setRotation(degrees((currentRotation + angle) % 360));
         });
         const newPdfBytes = await pdfDoc.save();
         downloadBlob(new Blob([newPdfBytes], { type: 'application/pdf' }), 'pdf-power-tools-rotated.pdf');
