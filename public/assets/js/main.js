@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rotate: degrees(45),
             });
         }
-        const newPdfBytes = await newPdfDoc.save();
+        const newPdfBytes = await pdfDoc.save();
         downloadBlob(new Blob([newPdfBytes], { type: 'application/pdf' }), 'pdf-power-tools-watermarked.pdf');
         setStatus('Marca d\'água adicionada com sucesso!');
     }
