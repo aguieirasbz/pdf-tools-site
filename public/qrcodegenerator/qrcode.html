@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code Grátis e Instantâneo (URL, Texto, Wi-Fi)</title>
+    <meta name="description" content="Crie QR Codes personalizados gratuitamente. Converta URLs, textos ou configure uma rede Wi-Fi em um QR Code instantaneamente. Faça o download em PNG ou JPG.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>Gerador de QR Code</h1>
+            <p>Crie e personalize seus QR Codes de forma fácil e instantânea.</p>
+        </div>
+    </header>
+
+    <div class="main-layout-grid">
+        <aside class="sidebar-left ad-placeholder-skyscraper">
+            Seu anúncio AdSense Vertical (160x600) aqui
+        </aside>
+
+        <main class="container">
+            <div class="tool-container">
+                <section class="input-section">
+                    <nav class="tabs">
+                        <button class="tab-button active" data-tab="url">URL</button>
+                        <button class="tab-button" data-tab="text">Texto</button>
+                        <button class="tab-button" data-tab="wifi">Wi-Fi</button>
+                    </nav>
+
+                    <div id="tab-url" class="tab-content active">
+                        <div class="form-group">
+                            <label for="url-input">Digite a URL ou link:</label>
+                            <input type="url" id="url-input" placeholder="https://www.google.com">
+                        </div>
+                    </div>
+                    <div id="tab-text" class="tab-content">
+                        <div class="form-group">
+                            <label for="text-input">Digite o seu texto:</label>
+                            <textarea id="text-input" rows="4" placeholder="Qualquer informação que você queira compartilhar..."></textarea>
+                        </div>
+                    </div>
+                    <div id="tab-wifi" class="tab-content">
+                        <div class="form-group">
+                            <label for="wifi-ssid">Nome da Rede (SSID):</label>
+                            <input type="text" id="wifi-ssid" placeholder="NomeDaSuaRede">
+                        </div>
+                        <div class="form-group">
+                            <label for="wifi-pass">Senha:</label>
+                            <input type="password" id="wifi-pass" placeholder="SuaSenhaSecreta">
+                        </div>
+                        <div class="form-group">
+                            <label for="wifi-type">Tipo de Segurança:</label>
+                            <select id="wifi-type">
+                                <option value="WPA">WPA/WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="nopass">Nenhuma</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="options-section">
+                    <div class="options-grid">
+                        <div class="form-group">
+                            <label for="qr-size">Tamanho (px):</label>
+                            <select id="qr-size">
+                                <option value="256">256x256</option>
+                                <option value="512">512x512</option>
+                                <option value="1024">1024x1024</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="qr-color-dark">Cor (Píxels):</label>
+                            <input type="color" id="qr-color-dark" value="#000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="qr-color-light">Cor (Fundo):</label>
+                            <input type="color" id="qr-color-light" value="#ffffff">
+                        </div>
+                        <div class="form-group">
+                            <label for="qr-correction">Correção de Erro:</label>
+                            <select id="qr-correction">
+                                <option value="L">Baixa (L)</option>
+                                <option value="M" selected>Média (M)</option>
+                                <option value="Q">Alta (Q)</option>
+                                <option value="H">Máxima (H)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="ad-placeholder">Seu anúncio AdSense Horizontal aqui</div>
+
+                <section class="output-section">
+                    <h2>Seu QR Code</h2>
+                    <div id="qrcode-container"></div>
+                    <div class="download-buttons">
+                        <button id="download-png" class="download-btn">Baixar PNG</button>
+                        <button id="download-jpg" class="download-btn">Baixar JPG</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <aside class="sidebar-right ad-placeholder-skyscraper">
+            Seu anúncio AdSense Vertical (160x600) aqui
+        </aside>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Gerador de QR Code. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
