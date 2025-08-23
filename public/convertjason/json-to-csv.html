@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor JSON para CSV - Online e Gratuito</title>
+    <meta name="description" content="Cole ou envie seu arquivo JSON e converta-o instantaneamente para CSV. Processamento seguro e local no seu navegador.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="tool-page">
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Voltar</a>
+            <h1>JSON para CSV</h1>
+            <p>Cole seu JSON na caixa à esquerda ou carregue um arquivo.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <div class="converter-layout">
+                <div class="io-panel">
+                    <div class="io-panel-header">
+                        <h2>Entrada JSON</h2>
+                        <div class="io-panel-actions">
+                            <label for="file-input-json">Carregar Arquivo</label>
+                            <input type="file" id="file-input-json" accept=".json" style="display:none;">
+                            <button id="clear-input">Limpar</button>
+                        </div>
+                    </div>
+                    <textarea id="json-input" placeholder="Cole seu array de objetos JSON aqui..."></textarea>
+                </div>
+
+                <div class="converter-controls">
+                    <button id="convert-btn" class="action-button">&rarr;</button>
+                </div>
+
+                <div class="io-panel">
+                    <div class="io-panel-header">
+                        <h2>Saída CSV</h2>
+                        <div class="io-panel-actions">
+                            <button id="copy-output">Copiar</button>
+                            <button id="download-output">Baixar</button>
+                        </div>
+                    </div>
+                    <textarea id="csv-output" readonly placeholder="Seu resultado CSV aparecerá aqui..."></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="ad-placeholder-medium">Seu anúncio AdSense aqui</div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Conversor de Dados. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
