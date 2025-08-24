@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas PDF - PDF Tools Suite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+        // Configuração obrigatória para o pdf.js
+        if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><i class="fas fa-file-pdf"></i> PDF Tools Suite</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="tool.html">Ferramentas</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Voltar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tool-tabs">
+            <div class="tool-tab" data-tool="juntar">Juntar PDF</div>
+            <div class="tool-tab" data-tool="dividir">Dividir PDF</div>
+            <div class="tool-tab" data-tool="proteger">Proteger PDF</div>
+            <div class="tool-tab" data-tool="desbloquear">Desbloquear PDF</div>
+            <div class="tool-tab" data-tool="rodar">Rodar PDF</div>
+            <div class="tool-tab" data-tool="marca-dagua">Marca d'água</div>
+            <div class="tool-tab" data-tool="jpg-pdf">JPG para PDF</div>
+            <div class="tool-tab" data-tool="pdf-jpg">PDF para JPG</div>
+            <div class="tool-tab" data-tool="assinar">Assinar PDF</div>
+            <div class="tool-tab" data-tool="editar">Editar PDF</div>
+            <div class="tool-tab" data-tool="organizar">Organizar PDF</div>
+        </div>
+    </div>
+
+    <div id="tool-pages-container">
+
+        <div class="tool-page" id="juntar-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-object-group"></i> Juntar PDF</h1><p>Combine vários arquivos PDF em um único documento.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seus PDFs aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivos</a><input id="juntar-input" type="file" class="file-input" multiple accept=".pdf"></div>
+                    <div class="tool-actions"><button id="juntar-btn" class="btn btn-primary btn-lg">JUNTAR PDF</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Juntar PDFs</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Selecione</h4><p>Escolha 2 ou mais arquivos PDF.</p></div><div class="step"><div class="step-number">2</div><h4>Processe</h4><p>Clique em "Juntar PDF".</p></div><div class="step"><div class="step-number">3</div><h4>Baixe</h4><p>Seu novo PDF unificado será baixado.</p></div></div></div></div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="dividir-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-cut"></i> Dividir PDF</h1><p>Extraia uma ou mais páginas de um PDF.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="dividir-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-options"><div class="option-group"><h3><i class="fas fa-cog"></i> Páginas para Extrair</h3><input id="dividir-ranges" type="text" placeholder="Ex: 1-5, 8, 10-12 (deixe em branco para todas)"></div></div>
+                    <div class="tool-actions"><button id="dividir-btn" class="btn btn-primary btn-lg">DIVIDIR PDF</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Dividir um PDF</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Selecione</h4><p>Carregue o arquivo PDF que quer dividir.</p></div><div class="step"><div class="step-number">2</div><h4>Defina</h4><p>Especifique os intervalos de páginas.</p></div><div class="step"><div class="step-number">3</div><h4>Divida</h4><p>Clique para criar um novo PDF.</p></div></div></div></div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="proteger-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-lock"></i> Proteger PDF</h1><p>Adicione uma senha para abrir seu arquivo PDF.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="proteger-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-options"><div class="option-group"><h3><i class="fas fa-key"></i> Definir Senha</h3><input id="proteger-password" type="password" placeholder="Digite a senha"></div></div>
+                    <div class="tool-actions"><button id="proteger-btn" class="btn btn-primary btn-lg">PROTEGER PDF</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Proteger um PDF</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Carregue</h4><p>Escolha o arquivo PDF.</p></div><div class="step"><div class="step-number">2</div><h4>Defina</h4><p>Digite uma senha segura.</p></div><div class="step"><div class="step-number">3</div><h4>Proteja</h4><p>Aplique a senha e baixe seu PDF.</p></div></div></div></div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="desbloquear-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-unlock"></i> Desbloquear PDF</h1><p>Remova a senha de um PDF (você precisa saber a senha atual).</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="desbloquear-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-options"><div class="option-group"><h3><i class="fas fa-key"></i> Senha Atual</h3><input id="desbloquear-password" type="password" placeholder="Digite a senha atual do PDF"></div></div>
+                    <div class="tool-actions"><button id="desbloquear-btn" class="btn btn-primary btn-lg">DESBLOQUEAR PDF</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Desbloquear um PDF</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Carregue</h4><p>Escolha o PDF protegido.</p></div><div class="step"><div class="step-number">2</div><h4>Digite</h4><p>Forneça a senha correta.</p></div><div class="step"><div class="step-number">3</div><h4>Baixe</h4><p>Seu PDF sem senha será baixado.</p></div></div></div></div>
+            </div>
+        </div>
+        
+        <div class="tool-page" id="rodar-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-redo"></i> Rodar PDF</h1><p>Gire todas as páginas do seu documento PDF em 90 graus.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="rodar-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-actions"><button id="rodar-btn" class="btn btn-primary btn-lg">RODAR PDF 90°</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Rodar um PDF</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Carregue</h4><p>Escolha o arquivo PDF.</p></div><div class="step"><div class="step-number">2</div><h4>Processe</h4><p>Clique em "Rodar PDF 90°".</p></div><div class="step"><div class="step-number">3</div><h4>Baixe</h4><p>Seu PDF rotacionado será baixado.</p></div></div></div></div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="marca-dagua-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-tint"></i> Marca d'água</h1><p>Adicione um texto como marca d'água em todas as páginas.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="marca-dagua-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-options"><div class="option-group"><h3><i class="fas fa-cog"></i> Texto da Marca d'água</h3><input id="marca-dagua-text" type="text" placeholder="CONFIDENCIAL"></div></div>
+                    <div class="tool-actions"><button id="marca-dagua-btn" class="btn btn-primary btn-lg">ADICIONAR MARCA D'ÁGUA</button></div>
+                </div>
+                <div class="tool-sidebar"><div class="info-section"><h3>Como Adicionar Marca d'água</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Carregue</h4><p>Escolha o arquivo PDF.</p></div><div class="step"><div class="step-number">2</div><h4>Defina</h4><p>Digite o texto que deseja aplicar.</p></div><div class="step"><div class="step-number">3</div><h4>Aplique</h4><p>Adicione a marca d'água e baixe.</p></div></div></div></div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="jpg-pdf-page">
+             <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="far fa-file-image"></i> JPG para PDF</h1><p>Converta uma ou mais imagens JPG/PNG em um único arquivo PDF.</p></div></div></section>
+             <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte suas imagens aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivos</a><input id="jpg-pdf-input" type="file" class="file-input" multiple accept="image/jpeg,image/png"></div>
+                    <div class="tool-actions"><button id="jpg-pdf-btn" class="btn btn-primary btn-lg">CONVERTER IMAGENS PARA PDF</button></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tool-page" id="pdf-jpg-page">
+             <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-file-image"></i> PDF para JPG</h1><p>Converta a primeira página do seu PDF em uma imagem JPG.</p></div></div></section>
+             <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="pdf-jpg-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-actions"><button id="pdf-jpg-btn" class="btn btn-primary btn-lg">CONVERTER PARA JPG</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="assinar-page">
+             <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-signature"></i> Assinar PDF</h1><p>Adicione uma imagem da sua assinatura no canto da primeira página.</p></div></div></section>
+             <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="option-group"><h3><i class="fas fa-file-pdf"></i> 1. Selecione o PDF</h3><input id="assinar-pdf-input" type="file" accept=".pdf"></div>
+                    <div class="option-group" style="margin-top: 20px;"><h3><i class="fas fa-signature"></i> 2. Selecione a Imagem da Assinatura (PNG)</h3><input id="assinar-signature-input" type="file" accept="image/png"></div>
+                    <div class="tool-actions" style="margin-top: 30px;"><button id="assinar-btn" class="btn btn-primary btn-lg">ASSINAR DOCUMENTO</button></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tool-page" id="editar-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-edit"></i> Editar PDF</h1><p>Exemplo: Adicionar um texto fixo na primeira página.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="editar-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-actions"><button id="editar-btn" class="btn btn-primary btn-lg">ADICIONAR TEXTO DE EXEMPLO</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-page" id="organizar-page">
+            <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-sort"></i> Organizar PDF</h1><p>Exemplo: Deletar a última página de um PDF.</p></div></div></section>
+            <div class="container tool-container-wrapper">
+                <div class="tool-main">
+                    <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="organizar-input" type="file" class="file-input" accept=".pdf"></div>
+                    <div class="tool-actions"><button id="organizar-btn" class="btn btn-primary btn-lg">DELETAR ÚLTIMA PÁGINA</button></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <footer>
+       <div class="container"><div class="footer-content"><div class="footer-column"><h3>PDF Tools Suite</h3><p>Ferramentas PDF que rodam 100% no seu navegador.</p></div><div class="footer-column"><h3>Legal</h3><ul class="footer-links"><li><a href="#">Termos de Uso</a></li><li><a href="#">Política de Privacidade</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2025 PDF Tools Suite. Todos os direitos reservados. <a href="index.html">Voltar ao Início</a></p></div></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
