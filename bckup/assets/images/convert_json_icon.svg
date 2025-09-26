@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#C00000" stroke-width="28"></circle>
+  <!-- JSON -->
+  <text x="120" y="270" font-size="72" font-family="Arial, sans-serif" font-weight="bold" fill="#C00000">{ }</text>
+  <!-- Seta -->
+  <path d="M220 200 L300 200 L300 170 L360 230 L300 290 L300 260 L220 260 Z" fill="#C00000"></path>
+  <!-- CSV -->
+  <rect x="340" y="180" width="100" height="120" rx="10" ry="10" stroke="#C00000" stroke-width="10" fill="none"></rect>
+  <text x="355" y="250" font-size="40" font-family="Arial, sans-serif" fill="#C00000">CSV</text>
+</svg>

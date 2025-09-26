@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#C00000" stroke-width="28"></circle>
+  <!-- QR Code -->
+  <rect x="120" y="120" width="80" height="80" stroke="#C00000" stroke-width="14" fill="none"></rect>
+  <rect x="312" y="120" width="80" height="80" stroke="#C00000" stroke-width="14" fill="none"></rect>
+  <rect x="120" y="312" width="80" height="80" stroke="#C00000" stroke-width="14" fill="none"></rect>
+  
+  <rect x="240" y="240" width="20" height="20" fill="#C00000"></rect>
+  <rect x="280" y="240" width="20" height="20" fill="#C00000"></rect>
+  <rect x="240" y="280" width="20" height="20" fill="#C00000"></rect>
+  <rect x="280" y="280" width="20" height="20" fill="#C00000"></rect>
+  <rect x="320" y="280" width="20" height="20" fill="#C00000"></rect>
+</svg>

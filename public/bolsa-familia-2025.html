@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bolsa Família 2025: Guia Completo Para Saber Quem Tem Direito, Qual o Valor e Como se Inscrever</title>
+    <meta name="description" content="Tudo o que você precisa saber sobre o Bolsa Família em 2025. Consulte os requisitos, valores, calendário de pagamento e um passo a passo completo para se inscrever.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .blog-post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .blog-post-container h1 {
+            font-size: 2.4rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .post-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 15px;
+        }
+        .post-meta span { margin-right: 15px; }
+        .blog-post-container h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .blog-post-container p, .blog-post-container li {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .blog-post-container ul, .blog-post-container ol {
+            padding-left: 20px;
+        }
+        .blog-post-container a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .blog-post-container a:hover {
+            text-decoration: underline;
+        }
+        .cta-box {
+            background-color: rgba(210, 51, 63, 0.05);
+            border: 2px solid rgba(210, 51, 63, 0.1);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
+        }
+
+                    /* ======================== */
+            /* == ESTILOS PARA O QUIZ == */
+            /* ======================== */
+            #quiz-bolsa-familia {
+                background-color: #f8f9fa;
+                border: 1px solid var(--light-gray);
+                border-radius: var(--border-radius);
+                padding: 30px;
+                margin: 30px 0;
+            }
+            .quiz-question {
+                margin-bottom: 25px;
+            }
+            .quiz-question label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .quiz-question input[type="number"] {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid var(--light-gray);
+                border-radius: var(--border-radius);
+                font-size: 1rem;
+            }
+            .quiz-options input[type="radio"] {
+                margin-right: 5px;
+            }
+            .quiz-options label {
+                display: inline-block;
+                margin-right: 20px;
+                font-weight: 400;
+            }
+            #quiz-submit-btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+            #quiz-result {
+                display: none; /* Começa escondido */
+                margin-top: 25px;
+                padding: 20px;
+                border-radius: var(--border-radius);
+                border: 1px solid transparent;
+                text-align: center;
+            }
+            #quiz-result h3 {
+                margin-top: 0;
+                font-size: 1.5rem;
+            }
+            /* Estilos para os diferentes tipos de resultado */
+            .result-success {
+                background-color: #d4edda;
+                border-color: #c3e6cb;
+                color: #155724;
+            }
+            .result-warning {
+                background-color: #fff3cd;
+                border-color: #ffeeba;
+                color: #856404;
+            }
+            .result-info {
+                background-color: #d1ecf1;
+                border-color: #bee5eb;
+                color: #0c5460;
+            }
+
+                    /* ============================ *//* ======================== */
+            /* === ESTILOS PARA A FAQ === */
+            /* ======================== */
+            .faq-container {
+                margin-top: 30px;
+            }
+            .faq-item {
+                border-bottom: 1px solid var(--light-gray);
+            }
+            .faq-question {
+                width: 100%;
+                background: none;
+                border: none;
+                padding: 20px 0;
+                text-align: left;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--dark);
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .faq-question:hover {
+                color: var(--primary);
+            }
+            .faq-question .fa-plus, .faq-question .fa-minus {
+                color: var(--primary);
+            }
+            .faq-answer {
+                padding: 0 10px 20px 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .faq-answer p {
+                margin-bottom: 0;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><i class="fas fa-file-pdf"></i> PDF TRUE</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>                   
+                    <li><a href="#ferramentas">Ferramentas</a></li>
+                    <li><a href="#privacidade">Privacidade</a></li>   
+                     <li><a href="blog.html">Blog</a></li> </ul>
+                    </ul>
+                <div class="nav-buttons">
+                    <a href="index.html#ferramentas" class="btn btn-primary"><i class="fas fa-tools"></i> Ver Ferramentas</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-post-container">
+             <img src="img/imagem-bolsa-familia.avif" alt="Família brasileira sorrindo, representando os beneficiários do Bolsa Família" class="featured-image">
+
+            <h1>Bolsa Família 2025: Guia Completo Para Saber Quem Tem Direito, Qual o Valor e Como se Inscrever</h1>
+
+            <div class="post-meta">
+                <span><i class="fas fa-user"></i> Por Equipe PDF TRUE</span>
+                <span><i class="fas fa-calendar-alt"></i> Publicado em 25 de setembro de 2025</span>
+            </div>
+
+            <p>O Bolsa Família é o principal programa de transferência de renda do Governo Federal e um pilar na luta contra a pobreza no Brasil. Em 2025, o programa continua a ser essencial para milhões de famílias em situação de vulnerabilidade.</p>
+            <p>Se você tem dúvidas sobre quem tem direito, como os valores são calculados ou o que é preciso para se inscrever, você está no lugar certo. Preparamos este guia completo para responder a todas as suas perguntas.</p>
+
+            <h2>O que é o Bolsa Família?</h2>
+            <p>O Bolsa Família é mais do que um auxílio financeiro. É um programa que busca garantir o direito à alimentação, à saúde e à educação para famílias em situação de pobreza. Para receber o benefício, as famílias precisam cumprir algumas condicionalidades, como manter as crianças na escola e a caderneta de vacinação em dia.</p>
+
+            <h2>Quem Tem Direito ao Bolsa Família em 2025?</h2>
+            <p>Para ser elegível ao programa em 2025, a principal regra é a renda familiar por pessoa. A família precisa se enquadrar na categoria de pobreza ou extrema pobreza. Além disso, é obrigatório que a família esteja inscrita no Cadastro Único para Programas Sociais (CadÚnico), com os dados corretos e atualizados.</p>
+            <ul>
+                <li><strong>Regra de Renda:</strong> A renda mensal por pessoa da família deve ser de, no máximo, R$ 218.</li>
+                <li><strong>Inscrição no CadÚnico:</strong> A família deve estar com a inscrição ativa e atualizada no CadÚnico. Se você não estiver inscrito, o primeiro passo é procurar um CRAS na sua cidade.</li>
+            </ul>
+
+            <h2>Documentos Necessários para a Inscrição</h2>
+            <p>Para se inscrever no Cadastro Único, o Responsável pela Unidade Familiar (RF) deve comparecer a um posto de atendimento (geralmente um CRAS) levando os seguintes documentos:</p>
+            <ul>
+                <li><strong>Do Responsável Familiar:</strong> CPF ou Título de Eleitor.</li>
+                <li><strong>Dos demais membros da família:</strong> Pelo menos um dos seguintes documentos por pessoa: CPF, Certidão de Nascimento ou Casamento, RG, Carteira de Trabalho ou Título de Eleitor.</li>
+            </ul>
+            
+            <div class="cta-box">
+                <h3><i class="fas fa-file-pdf"></i> Dica: Organize seus Documentos para a Inscrição!</h3>
+                <p>Muitos postos de atendimento pedem cópias digitais dos seus documentos. Para facilitar, você pode tirar fotos dos documentos e depois usar nossa ferramenta para transformar as imagens em um arquivo PDF único. Se precisar, use nossa ferramenta gratuita para <a href="jpg-para-pdf.html">Converter JPG para PDF</a>!</p>
+            </div>
+
+            <h2>Qual o Valor do Benefício?</h2>
+            <p>O valor do Bolsa Família não é fixo e depende da composição da sua família. Em 2025, a estrutura de pagamentos inclui:</p>
+            <ul>
+                <li><strong>Benefício de Renda de Cidadania:</strong> R$ 142 por integrante da família.</li>
+                <li><strong>Benefício Complementar:</strong> Um valor adicional para garantir que a renda total da família alcance, no mínimo, R$ 600.</li>
+                <li><strong>Benefício Primeira Infância:</strong> R$ 150 adicionais por criança de até 6 anos.</li>
+                <li><strong>Benefício Variável Familiar:</strong> R$ 50 adicionais para gestantes e para crianças e adolescentes de 7 a 18 anos.</li>
+            </ul>
+            
+            <h2>Como se Inscrever no Bolsa Família: Passo a Passo</h2>
+            <ol>
+                <li><strong>Verifique se você atende aos critérios:</strong> Confira a regra de renda de R$ 218 por pessoa em sua família.</li>
+                <li><strong>Reúna os documentos:</strong> Separe os documentos de todos os membros da família, conforme listado acima.</li>
+                <li><strong>Procure o CRAS:</strong> Vá ao Centro de Referência de Assistência Social (CRAS) ou ao setor responsável pelo Cadastro Único em seu município.</li>
+                <li><strong>Faça a inscrição no CadÚnico:</strong> Um entrevistador social fará a coleta dos seus dados. Responda a todas as perguntas corretamente.</li>
+                <li><strong>Aguarde a análise:</strong> Após a inscrição, o sistema do governo federal fará a análise para verificar se sua família será incluída no programa. A seleção é feita de forma automática.</li>
+            </ol>
+
+                        <div style="text-align: center; margin: 30px 0;">
+                <a href="https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/calendario-de-pagamento-do-bolsa-familia-de-2025-ja-esta-disponivel/CalendarioPBF2025.pdf" 
+                class="btn btn-outline" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <i class="fas fa-download"></i> Baixar o Calendário Oficial de 2025 (PDF)
+                </a>
+            </div>
+
+            
+            
+            <div class="cta-box">
+                <h3><i class="fas fa-tools"></i> Precisa manipular arquivos PDF?</h3>
+                <p>Seja para inscrições em benefícios, para o trabalho ou estudos, lidar com documentos é uma rotina. Lembre-se que o <strong>PDF TRUE</strong> oferece um conjunto completo de ferramentas gratuitas para <a href="juntar-pdf.html">juntar</a>, <a href="dividir-pdf.html">dividir</a>, <a href="proteger-pdf.html">proteger</a> e muito mais. Tudo seguro e direto no seu navegador!</p>
+            </div>
+
+            <h2><i class="fas fa-question-circle"></i> Quiz Rápido: Será que você tem direito?</h2>
+        <p>Responda a 3 perguntas rápidas para ter uma estimativa se sua família se enquadra nos critérios principais do Bolsa Família. Este é um simulador e não substitui a análise oficial do governo.</p>
+
+        <div id="quiz-bolsa-familia">
+            <div class="quiz-question">
+                <label>1. Sua família está inscrita no Cadastro Único (CadÚnico)?</label>
+                <div class="quiz-options">
+                    <input type="radio" id="cadunico-sim" name="cadunico" value="sim">
+                    <label for="cadunico-sim">Sim</label>
+                    <input type="radio" id="cadunico-nao" name="cadunico" value="nao">
+                    <label for="cadunico-nao">Não</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <label for="renda-total">2. Qual é a RENDA TOTAL da sua família por mês? (some o salário de todos)</label>
+                <input type="number" id="renda-total" placeholder="Ex: 850">
+            </div>
+
+            <div class="quiz-question">
+                <label for="pessoas-familia">3. Quantas PESSOAS moram na sua casa (incluindo você)?</label>
+                <input type="number" id="pessoas-familia" placeholder="Ex: 5">
+            </div>
+
+            <button id="quiz-submit-btn" class="btn btn-primary btn-lg">Verificar Agora</button>
+
+            <div id="quiz-result">
+                </div>
+        </div>
+
+        <h2><i class="fas fa-question"></i> Perguntas Frequentes sobre o Bolsa Família</h2>
+
+<div class="faq-container">
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Me inscrevi no Cadastro Único. Já começo a receber o Bolsa Família?</span>
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Não necessariamente. Estar no CadÚnico é o primeiro passo obrigatório, mas não garante a entrada imediata no programa. O Governo Federal seleciona as famílias mensalmente, de forma automática, com base no orçamento disponível e nos dados do cadastro. É preciso aguardar a seleção.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Comecei a trabalhar de carteira assinada. Perco o benefício na hora?</span>
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Não imediatamente. Existe a <strong>Regra de Proteção</strong>. Se a renda por pessoa da sua família subir para até meio salário mínimo (R$ 706 em 2025), você não perde o benefício imediatamente. A família pode continuar recebendo 50% do valor do benefício por até 2 anos, desde que permaneça no CadÚnico.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Meu benefício foi bloqueado. O que pode ter acontecido?</span>
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Os bloqueios geralmente acontecem por alguns motivos principais: <strong>1)</strong> Dados desatualizados no Cadastro Único (há mais de 2 anos sem atualizar); <strong>2)</strong> Descumprimento das condicionalidades de saúde (vacinação) ou educação (frequência escolar); <strong>3)</strong> A renda familiar informada no cadastro ultrapassou o limite do programa.</p>
+        </div>
+    </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Como posso consultar a situação do meu benefício?</span>
+                <i class="fas fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Você pode consultar a situação do seu Bolsa Família através dos canais oficiais da Caixa: o aplicativo <strong>Caixa Tem</strong>, o aplicativo do Bolsa Família, ou ligando para o Atendimento Caixa ao Cidadão no número 111.</p>
+            </div>
+        </div>
+    </div>
+            
+
+
+                    
+        <h2>Conclusão</h2>
+        <p>Estar inscrito no Bolsa Família é um direito de muitas famílias brasileiras e um passo importante para garantir mais dignidade e acesso a oportunidades. Mantenha sempre seus dados no Cadastro Único atualizados e acompanhe os canais oficiais do governo, como a <a href="https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia" target="_blank" rel="noopener noreferrer">página oficial do programa</a>, para não perder nenhuma informação importante.</p>
+           
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column">
+                    <h3>PDF TRUE</h3>
+                    <p>A plataforma definitiva para manipular arquivos PDF diretamente no seu navegador. Gratuito, rápido e seguro.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Ferramentas</h3>
+                    <ul class="footer-links">
+                        <li><a href="juntar-pdf.html">Juntar PDF</a></li>
+                        <li><a href="dividir-pdf.html">Dividir PDF</a></li>
+                        <li><a href="proteger-pdf.html">Proteger PDF</a></li>
+                        <li><a href="jpg-para-pdf.html">JPG para PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PDF TRUE. Todos os direitos reservados. <a href="index.html">Voltar ao Início</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.getElementById('quiz-submit-btn').addEventListener('click', function() {
+        // Obter respostas do quiz
+        const cadunico = document.querySelector('input[name="cadunico"]:checked');
+        const rendaTotal = parseFloat(document.getElementById('renda-total').value);
+        const pessoasFamilia = parseInt(document.getElementById('pessoas-familia').value);
+
+        // Validar entradas
+        if (!cadunico || isNaN(rendaTotal) || isNaN(pessoasFamilia) || rendaTotal < 0 || pessoasFamilia <= 0) {
+            alert('Por favor, responda todas as perguntas corretamente.');
+            return;
+        }
+
+        // Calcular renda per capita
+        const rendaPerCapita = rendaTotal / pessoasFamilia;
+
+        // Determinar elegibilidade
+        let resultado = '';
+        let classeResultado = '';
+
+        if (cadunico.value === 'sim' && rendaPerCapita <= 218) {
+            resultado = 'Parabéns! Com base nas suas respostas, sua família provavelmente tem direito ao Bolsa Família. Lembre-se de que a análise oficial é feita pelo governo.';
+            classeResultado = 'result-success';
+        } else if (cadunico.value === 'sim' && rendaPerCapita > 218 && rendaPerCapita <= 400) {
+            resultado = 'Sua família está próxima dos critérios de elegibilidade. Considere atualizar seus dados no CadÚnico e verificar outras opções de assistência social.';
+            classeResultado = 'result-warning';
+        } else {
+            resultado = 'Com base nas suas respostas, sua família provavelmente não se enquadra nos critérios principais do Bolsa Família. Recomendamos buscar outras formas de apoio social.';
+            classeResultado = 'result-info';
+        }
+
+        // Exibir resultado
+        const resultadoDiv = document.getElementById('quiz-result');
+        resultadoDiv.innerHTML = `<h3>Resultado do Quiz</h3><p>${resultado}</p>`;
+        resultadoDiv.className = classeResultado;
+        resultadoDiv.style.display = 'block';
+    });
+
+
+            // ===================================================================
+        // ======================= LÓGICA DA FAQ =============================
+        // ===================================================================
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                button.classList.toggle('active');
+
+                if (button.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    answer.style.maxHeight = 0;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+
+</script>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Converta a primeira página de um arquivo PDF para uma imagem JPG de alta qualidade. Extraia páginas de PDF como imagens de forma segura.">
+    <title>Converter PDF para JPG | PDF TRUE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+        if (typeof pdfjsLib !== 'undefined') {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><i class="fas fa-file-pdf"></i> PDF TRUE</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="index.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Voltar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="tool-page">
+        <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-file-image"></i> PDF para JPG</h1><p>Converta a primeira página do seu PDF em uma imagem JPG.</p></div></div></section>
+        <div class="container tool-container-wrapper">
+            <div class="tool-main">
+                <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="tool-input" type="file" class="file-input" accept=".pdf"><p id="file-info" style="margin-top: 15px; color: var(--gray);"></p></div>
+                <div class="tool-actions"><button id="tool-btn" class="btn btn-primary btn-lg">CONVERTER PARA JPG</button></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container"><div class="footer-content"><div class="footer-column"><h3>PDF TRUE</h3><p>Ferramentas PDF que rodam 100% no seu navegador.</p></div><div class="footer-column"><h3>Legal</h3><ul class="footer-links"><li><a href="#">Termos de Uso</a></li><li><a href="#">Política de Privacidade</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2025 PDF TRUE. Todos os direitos reservados. <a href="index.html">Voltar ao Início</a></p></div></div>
+    </footer>
+
+    <script src="js/pdf-lib-functions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toolBtn = document.getElementById('tool-btn');
+            const fileInput = document.getElementById('tool-input');
+            const fileInfo = document.getElementById('file-info');
+            const uploadArea = document.querySelector('.upload-area');
+
+            uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('active'); });
+            uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('active'));
+            uploadArea.addEventListener('drop', () => uploadArea.classList.remove('active'));
+
+            fileInput.addEventListener('change', () => {
+                fileInfo.textContent = fileInput.files.length > 0 ? `Arquivo selecionado: ${fileInput.files[0].name}` : '';
+            });
+
+            toolBtn.addEventListener('click', async () => {
+                if (fileInput.files.length === 0) {
+                    return showUserMessage('Por favor, selecione um arquivo PDF.', 'error');
+                }
+                
+                const originalText = toolBtn.textContent;
+                toolBtn.textContent = 'Processando...';
+                toolBtn.disabled = true;
+
+                try {
+                    await handlePdfToJpg(fileInput.files[0]);
+                } catch (e) {
+                    showUserMessage('Ocorreu um erro: ' + e.message, 'error');
+                    console.error(e);
+                } finally {
+                    toolBtn.textContent = originalText;
+                    toolBtn.disabled = false;
+                    fileInput.value = '';
+                    fileInfo.textContent = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

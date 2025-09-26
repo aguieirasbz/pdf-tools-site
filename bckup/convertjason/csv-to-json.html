@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor CSV para JSON - Online e Gratuito</title>
+    <meta name="description" content="Cole ou envie seu arquivo CSV e converta-o instantaneamente para JSON. Opções de cabeçalho e delimitador disponíveis. Processamento seguro e local.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="tool-page">
+    <header class="main-header">
+        <div class="container">
+            <a href="jason.html" class="back-link">&larr; Voltar</a>
+            <h1>CSV para JSON</h1>
+            <p>Cole seu CSV na caixa à esquerda ou carregue um arquivo.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tool-container">
+            <div class="converter-layout">
+
+                <div class="io-panel">
+                    <div class="io-panel-header">
+                        <h2>Entrada CSV</h2>
+                        <div class="io-panel-actions">
+                            <label for="file-input-csv">Carregar Arquivo</label>
+                            <input type="file" id="file-input-csv" accept=".csv, .txt" style="display:none;">
+                            <button id="clear-input">Limpar</button>
+                        </div>
+                    </div>
+                    <textarea id="csv-input" placeholder="Cole seus dados CSV aqui..."></textarea>
+                    <div class="options-panel">
+                        <div>
+                            <input type="checkbox" id="header-checkbox" checked>
+                            <label for="header-checkbox">Primeira linha é cabeçalho</label>
+                        </div>
+                        <div>
+                            <label for="delimiter-input">Delimitador:</label>
+                            <input type="text" id="delimiter-input" value="," size="2">
+                        </div>
+                        <div>
+                            <label for="encoding-select">Codificação do Arquivo:</label>
+                            <select id="encoding-select">
+                                <option value="UTF-8">UTF-8 (Padrão)</option>
+                                <option value="Windows-1252">Windows-1252 (ANSI / Excel Padrão)</option>
+                                <option value="ISO-8859-1">ISO-8859-1 (Latin1)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="converter-controls">
+                    <button id="convert-btn" class="action-button">&rarr;</button>
+                </div>
+
+                <div class="io-panel">
+                    <div class="io-panel-header">
+                        <h2>Saída JSON</h2>
+                        <div class="io-panel-actions">
+                            <button id="copy-output">Copiar</button>
+                            <button id="download-output">Baixar</button>
+                        </div>
+                    </div>
+                    <textarea id="json-output" readonly placeholder="Seu resultado JSON formatado aparecerá aqui..."></textarea>
+                </div>
+                
+            </div> </div>
+        <div class="ad-placeholder-medium">Seu anúncio AdSense aqui</div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Conversor de Dados. Todos os direitos reservados.</p>
+            <a href="privacy.html">Política de Privacidade</a>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
