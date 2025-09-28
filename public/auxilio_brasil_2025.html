@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxílio Brasil 2025: Quem Tem Direito e Como Funciona o Novo Bolsa Família</title>
+    <meta name="description" content="Saiba quem tem direito ao Auxílio Brasil em 2025, agora chamado Bolsa Família. Consulte as regras de renda, valores e como se inscrever no programa.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Local -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --primary: #d2333f;
+            --primary-dark: #a01b28;
+            --dark: #222;
+            --gray: #777;
+            --light-gray: #ddd;
+            --border-radius: 10px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .blog-post-container h1 {
+            font-size: 2.4rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .post-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 15px;
+        }
+        .post-meta span { margin-right: 15px; }
+        .blog-post-container h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .blog-post-container p, .blog-post-container li {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .blog-post-container ul, .blog-post-container ol {
+            padding-left: 20px;
+        }
+        .blog-post-container a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .blog-post-container a:hover {
+            text-decoration: underline;
+        }
+        .cta-box {
+            background-color: rgba(210, 51, 63, 0.05);
+            border: 2px solid rgba(210, 51, 63, 0.1);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .cta-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 25px;
+        }
+
+        /* ======================== */
+        /* == ESTILOS PARA O QUIZ == */
+        /* ======================== */
+        #quiz-bolsa-familia {
+            background-color: #f8f9fa;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+        .quiz-question label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .quiz-question input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        .quiz-options input[type="radio"] {
+            margin-right: 5px;
+        }
+        .quiz-options label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: 400;
+        }
+        #quiz-submit-btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+        #quiz-result {
+            display: none; /* Começa escondido */
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid transparent;
+            text-align: center;
+        }
+        #quiz-result h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .result-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .result-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+        .result-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        /* ======================== */
+        /* === ESTILOS PARA A FAQ === */
+        /* ======================== */
+        .faq-container {
+            margin-top: 30px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-question .fa-plus, .faq-question .fa-minus {
+            color: var(--primary);
+        }
+        .faq-answer {
+            padding: 0 10px 20px 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-answer p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header id="header-placeholder"></header>
+
+<main>
+    <div class="blog-post-container">
+        <img src="img/auxilio_brasil.jpg" alt="Mãe e filho se abraçando em um campo, simbolizando a proteção social do Auxílio Brasil e Bolsa Família" class="featured-image">
+
+        <h1>Auxílio Brasil 2025: Quem Tem Direito e Como Funciona o Novo Bolsa Família</h1>
+
+        <div class="post-meta">
+            <span><i class="fas fa-user"></i> Por Equipe PDF TRUE</span>
+            <span><i class="fas fa-calendar-alt"></i> Publicado em 28 de setembro de 2025</span>
+        </div>
+        <p>O Auxílio Brasil, programa social que substituiu o Bolsa Família, passou por mudanças significativas em 2025. Com o retorno ao nome original de Bolsa Família, o governo federal implementou novas regras e valores para atender melhor as famílias em situação de vulnerabilidade econômica.</p>
+
+        <p>Você procurou por "Auxílio Brasil" e quer saber quem tem direito em 2025? É importante saber que o programa foi reestruturado e voltou a se chamar Bolsa Família, trazendo novas regras e valores para apoiar as famílias brasileiras.</p>
+        <p>Este guia foi feito para tirar todas as suas dúvidas. Vamos explicar de forma clara quem pode receber, qual o valor do benefício e o que você precisa fazer para se inscrever e garantir esse direito para sua família.</p>
+
+        <h2>De Auxílio Brasil para Bolsa Família: O que mudou?</h2>
+        <p>A mudança de nome de Auxílio Brasil para Bolsa Família marcou a retomada de um modelo de programa com foco não apenas na transferência de renda, mas também no acompanhamento da saúde e educação das famílias beneficiadas.</p>
+        <p>A nova estrutura busca garantir uma rede de proteção mais completa. Isso significa que, para receber o benefício, as famílias precisam cumprir alguns compromissos, conhecidos como condicionalidades, que veremos mais adiante.</p>
+
+        <h2>Quem Tem Direito ao Benefício em 2025?</h2>
+        <p>A principal porta de entrada para o programa é o critério de renda. Para ter direito ao Bolsa Família em 2025, sua família precisa se enquadrar nas faixas de pobreza ou extrema pobreza. Mas, como saber isso?</p>
+        <p>É simples: some a renda de todas as pessoas que moram na sua casa e divida pelo número total de pessoas. O resultado é a renda per capita. Confira os requisitos:</p>
+        <ul>
+            <li><strong>Renda por Pessoa:</strong> A renda mensal por pessoa da família deve ser de, no máximo, R$ 218.</li>
+            <li><strong>Cadastro Único (CadÚnico):</strong> É obrigatório estar inscrito e com os dados atualizados no CadÚnico do Governo Federal. Sem isso, não há como ser selecionado.</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3><i class="fas fa-file-invoice"></i> Mantenha seu Cadastro Único Atualizado!</h3>
+            <p>O Cadastro Único é a chave para acessar o Bolsa Família e outros programas sociais. Seus dados devem ser atualizados a cada 2 anos ou sempre que houver mudança na família. Procure o CRAS da sua cidade para não correr o risco de perder o benefício. </p>
+        </div>
+
+        <h2>Quais os Valores Pagos pelo Programa?</h2>
+        <p>O valor do Bolsa Família não é o mesmo para todo mundo, pois ele varia conforme o tamanho e a composição da sua família. O objetivo é atender às necessidades específicas de cada lar. A estrutura do benefício é a seguinte:</p>
+        <ul>
+            <li><strong>Benefício de Renda de Cidadania:</strong> Valor de R$ 142 pago por cada integrante da família.</li>
+            <li><strong>Benefício Complementar:</strong> Garante que o valor total recebido pela família seja de, no mínimo, R$ 600.</li>
+            <li><strong>Benefício Primeira Infância:</strong> Um adicional de R$ 150 para cada criança com até 6 anos de idade.</li>
+            <li><strong>Benefício Variável Familiar:</strong> Um adicional de R$ 50 para gestantes, crianças e adolescentes entre 7 e 18 anos.</li>
+        </ul>
+
+        <h2>Passo a Passo: Como se Inscrever para Receber o Auxílio?</h2>
+        <p>A inscrição no programa é feita de forma presencial. Não existe um "site de inscrição" para o Bolsa Família. Siga estes passos:</p>
+        <ol>
+            <li><strong>Calcule a renda da sua família:</strong> Verifique se vocês se encaixam na regra de até R$ 218 por pessoa.</li>
+            <li><strong>Reúna os documentos:</strong> O Responsável Familiar deve levar seu CPF ou Título de Eleitor. Para os outros membros da família, é preciso apresentar pelo menos um documento, como CPF, certidão de nascimento ou RG.</li>
+            <li><strong>Encontre o CRAS:</strong> Vá ao Centro de Referência de Assistência Social (CRAS) ou ao setor responsável pelo CadÚnico no seu município.</li>
+            <li><strong>Realize a entrevista do CadÚnico:</strong> Responda a todas as perguntas do entrevistador social com atenção.</li>
+            <li><strong>Aguarde a seleção:</strong> Após o cadastro, a inclusão não é imediata. O governo federal realiza uma seleção automática todos os meses para incluir novas famílias, de acordo com o orçamento do programa.</li>
+        </ol>
+        
+        <h2><i class="fas fa-question-circle"></i> Quiz Rápido: Será que você tem direito?</h2>
+        <p>Responda a 3 perguntas rápidas para ter uma estimativa se sua família se enquadra nos critérios principais do Bolsa Família. Este é um simulador e não substitui a análise oficial do governo.</p>
+
+        <!-- Quiz corrigido (apenas uma vez) -->
+        <div id="quiz-bolsa-familia">
+            <div class="quiz-question">
+                <label>1. Sua família está inscrita no Cadastro Único (CadÚnico)?</label>
+                <div class="quiz-options">
+                    <input type="radio" id="cadunico-sim" name="cadunico" value="sim">
+                    <label for="cadunico-sim">Sim</label>
+                    <input type="radio" id="cadunico-nao" name="cadunico" value="nao">
+                    <label for="cadunico-nao">Não</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <label for="renda-total">2. Qual é a RENDA TOTAL da sua família por mês? (some o salário de todos)</label>
+                <input type="number" id="renda-total" placeholder="Ex: 950">
+            </div>
+
+            <div class="quiz-question">
+                <label for="pessoas-familia">3. Quantas PESSOAS moram na sua casa (incluindo você)?</label>
+                <input type="number" id="pessoas-familia" placeholder="Ex: 5">
+            </div>
+
+            <button id="quiz-submit-btn" class="btn btn-primary btn-lg">Verificar Agora</button>
+
+            <div id="quiz-result"></div>
+        </div>
+        
+        <div class="cta-box">
+            <h3><i class="fas fa-tools"></i> Precisa organizar seus documentos?</h3>
+            <p>Para o cadastro ou para qualquer outra necessidade, ter seus documentos em formato digital facilita muito. Use as ferramentas gratuitas do <strong>PDF TRUE</strong> para <a href="juntar-pdf.html">juntar</a>, <a href="comprimir-pdf.html">comprimir</a> ou <a href="proteger-pdf.html">proteger</a> seus arquivos PDF de forma rápida e segura.</p>
+        </div>
+
+        <h2><i class="fas fa-question"></i> Perguntas Frequentes sobre o Auxílio Brasil / Bolsa Família</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Se eu arrumar um emprego, perco o benefício na hora?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Não necessariamente. Com a <strong>Regra de Proteção</strong>, se a renda por pessoa da sua família aumentar para até meio salário mínimo, você continua recebendo 50% do valor do benefício por até dois anos. Isso dá mais segurança para você procurar um emprego formal.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Por que meu benefício foi bloqueado ou cancelado?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>As razões mais comuns para bloqueio são: cadastro desatualizado (há mais de 2 anos), não cumprimento das regras de saúde e educação (como falta escolar ou vacinas em atraso) ou aumento da renda familiar acima do limite permitido pelo programa.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Estar no Cadastro Único garante o recebimento?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Não. Estar no CadÚnico é uma condição obrigatória, mas não garante a entrada automática. A seleção das famílias é feita mensalmente pelo Governo Federal, que considera o limite orçamentário e os dados cadastrais, priorizando as famílias de menor renda.</p>
+                </div>
+            </div>
+            
+             <div class="faq-item">
+                <button class="faq-question">
+                    <span>Como consulto a data do meu pagamento?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>O calendário de pagamentos é organizado pelo último dígito do seu Número de Identificação Social (NIS). Você pode consultar as datas no aplicativo Caixa Tem, no aplicativo do Bolsa Família ou no <a href="[https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia](https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia)" target="_blank" rel="noopener noreferrer">site oficial do programa</a>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Conclusão</h2>
+        <p>Entender as regras do antigo Auxílio Brasil, agora Bolsa Família, é o primeiro passo para garantir que sua família tenha acesso a esse importante direito. O programa é uma ferramenta essencial de proteção social, ajudando milhões de brasileiros a viver com mais dignidade.</p>
+        <p>Se você acredita que tem direito, não deixe de procurar o CRAS da sua cidade para se inscrever no Cadastro Único. Lembre-se de manter os dados sempre atualizados e cumprir as condicionalidades para assegurar a continuidade do benefício.</p>
+    </div>
+</main>
+
+<footer id="footer-placeholder"></footer>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('quiz-submit-btn').addEventListener('click', function() {
+    const cadunico = document.querySelector('input[name="cadunico"]:checked');
+    const rendaTotal = parseFloat(document.getElementById('renda-total').value);
+    const pessoas = parseInt(document.getElementById('pessoas-familia').value);
+    const resultDiv = document.getElementById('quiz-result');
+
+    if (!cadunico || isNaN(rendaTotal) || isNaN(pessoas) || pessoas <= 0) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result-warning';
+        resultDiv.innerHTML = '<h3>Por favor, responda todas as perguntas corretamente.</h3>';
+        return;
+    }
+
+    const rendaPerCapita = rendaTotal / pessoas;
+
+    if (cadunico.value === 'sim' && rendaPerCapita <= 218) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result-success';
+        resultDiv.innerHTML = '<h3>Parabéns! Sua família parece atender aos critérios do Bolsa Família.</h3>';
+    } else if (cadunico.value === 'sim' && rendaPerCapita > 218) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result-info';
+        resultDiv.innerHTML = '<h3>Sua família está no CadÚnico, mas a renda por pessoa ultrapassa o limite. Confira se há benefícios complementares disponíveis.</h3>';
+    } else {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result-warning';
+        resultDiv.innerHTML = '<h3>Infelizmente, sua família não atende aos critérios principais do Bolsa Família.</h3>';
+    }
+});
+
+// FAQ toggle
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    questionBtn.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = questionBtn.querySelector('i');
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+        }
+    });
+});
+</script>
+</body>
+</html>

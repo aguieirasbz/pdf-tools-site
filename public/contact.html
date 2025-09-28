@@ -6,6 +6,7 @@
     <title>Contato - PDF TRUE</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .contact-form {
             display: flex;
@@ -54,15 +55,12 @@
 </head>
 <body class="tool-page">
 
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="back-link">&larr; Voltar para o início</a>
-            <h1>Contato</h1>
-        </div>
-    </header>
+   <header id="header-placeholder"></header>
 
-    <main class="container" style="text-align: left;">
-        <h2>Fale Conosco</h2>
+    
+      <main class="container" style="text-align: left; max-width: 800px; padding-top: 40px; padding-bottom: 40px;">
+        <h1>Fale Conosco</h1>
+        <h2>Fale Conosco - PDF</h2>
         <p>Tem dúvidas, sugestões ou quer falar com nossa equipe? Preencha o formulário abaixo e entraremos em contato o mais rápido possível.</p>
 
         <form id="contactForm" class="contact-form">
@@ -91,11 +89,8 @@
         <p style="margin-top: 20px;">Ou envie um e-mail diretamente para: <strong>contato@pdftrue.com.br</strong></p>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2025 PDF TRUE. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+   <footer id="footer-placeholder"></footer>
+    <script src="js/main.js"></script>
 
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
