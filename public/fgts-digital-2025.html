@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FGTS 2025: Guia Completo Para Consultar o Saldo e Entender as Regras de Saque</title>
+<meta name="description" content="Tudo sobre o FGTS em 2025! Saiba como consultar seu saldo, conheça as regras do Saque-Aniversário e Rescisão, e veja o que pode mudar no benefício.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    .blog-post-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .blog-post-container h1 {
+        font-size: 2.4rem;
+        color: #222;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    .post-meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+    .post-meta span { margin-right: 15px; }
+    .blog-post-container h2 {
+        font-size: 1.8rem;
+        color: #111;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #d2333f;
+    }
+    .blog-post-container p, .blog-post-container li {
+        color: #444;
+        margin-bottom: 15px;
+    }
+    .blog-post-container ul, .blog-post-container ol {
+        padding-left: 20px;
+    }
+    .blog-post-container a {
+        color: #d2333f;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .blog-post-container a:hover {
+        text-decoration: underline;
+    }
+    .cta-box {
+        background-color: rgba(210, 51, 63, 0.05);
+        border: 2px solid rgba(210, 51, 63, 0.1);
+        border-radius: 12px;
+        padding: 25px;
+        margin: 30px 0;
+    }
+    .cta-box h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: #b30000;
+    }
+    .featured-image {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 25px;
+    }
+
+    /* QUIZ */
+    #quiz-bolsa-familia {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+    }
+    .quiz-question {
+        margin-bottom: 25px;
+    }
+    .quiz-question label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .quiz-question select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: white;
+    }
+    .quiz-options input[type="radio"] {
+        margin-right: 5px;
+    }
+    .quiz-options label {
+        margin-right: 20px;
+        font-weight: 400;
+    }
+    #quiz-submit-btn {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #d2333f;
+        color: white;
+        cursor: pointer;
+    }
+    #quiz-submit-btn:hover {
+        background-color: #b30000;
+    }
+    #quiz-result {
+        display: none;
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        text-align: center;
+    }
+    .result-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+    .result-warning {
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+        color: #856404;
+    }
+    .result-info {
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+        color: #0c5460;
+    }
+
+    /* FAQ */
+    .faq-container {
+        margin-top: 30px;
+    }
+    .faq-item {
+        border-bottom: 1px solid #ddd;
+    }
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 20px 0;
+        text-align: left;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #222;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-question:hover { color: #d2333f; }
+    .faq-question .fa-plus, .faq-question .fa-minus { color: #d2333f; }
+    .faq-answer {
+        padding: 0 10px 20px 10px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    .faq-answer p { margin-bottom: 0; }
+</style>
+</head>
+
+<body>
+<header id="header-placeholder"></header>
+
+<main>
+    <div class="blog-post-container">
+        <img src="img/fgts_digital_2025.jpg"alt="Trabalhador verificando o saldo do FGTS 2025 no aplicativo de celular" class="featured-image">
+
+        <h1>FGTS 2025: Guia Completo Para Consultar o Saldo e Entender as Regras de Saque</h1>
+
+        <div class="post-meta">
+            <span><i class="fas fa-user"></i> Por Equipe PDF TRUE</span>
+            <span><i class="fas fa-calendar-alt"></i> Publicado em 28 de setembro de 2025</span>
+        </div>
+
+        <p>O Fundo de Garantia do Tempo de Serviço (FGTS) é um dos principais direitos do trabalhador brasileiro. Em 2025, novas regras e possibilidades de saque estão em vigor, e é fundamental entender como consultar seu saldo e identificar qual modalidade de saque é a mais vantajosa para você.</p>
+
+        <h2>Como Consultar o Saldo do FGTS em 2025</h2>
+        <p>Você pode consultar o saldo de diferentes formas:</p>
+        <ul>
+            <li><strong>Aplicativo FGTS</strong>: disponível para Android e iOS.</li>
+            <li><strong>Site da Caixa</strong>: acessando com CPF e senha.</li>
+            <li><strong>Agências da Caixa</strong>: atendimento presencial.</li>
+        </ul>
+
+        
+
+        <h2>Modalidades de Saque do FGTS</h2>
+        <p>Em 2025, os trabalhadores podem acessar o FGTS pelas seguintes modalidades:</p>
+        <ul>
+            <li><strong>Saque-Rescisão</strong>: em caso de demissão sem justa causa.</li>
+            <li><strong>Saque-Aniversário</strong>: retiradas anuais no mês de aniversário.</li>
+            <li><strong>Saque por Aposentadoria</strong>: direito ao saldo integral.</li>
+        </ul>
+
+        <h2><i class="fas fa-question-circle"></i> Quiz Rápido: Qual Saque do FGTS é Para Você?</h2>
+        <p>Responda a estas perguntas e veja qual modalidade se encaixa no seu caso. Este é um simulador, não substitui a consulta oficial.</p>
+
+        <div id="quiz-bolsa-familia">
+            <div class="quiz-question">
+                <label for="situacao-trabalho">1. Qual a sua situação de trabalho atual?</label>
+                <select id="situacao-trabalho" name="situacao-trabalho">
+                    <option value="">Selecione...</option>
+                    <option value="trabalhando">Estou trabalhando normalmente</option>
+                    <option value="demitido">Fui demitido sem justa causa</option>
+                    <option value="aposentado">Já sou aposentado</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label>2. Você aderiu ao Saque-Aniversário?</label>
+                <div class="quiz-options">
+                    <input type="radio" id="aniversario-sim" name="aniversario" value="sim">
+                    <label for="aniversario-sim">Sim</label>
+                    <input type="radio" id="aniversario-nao" name="aniversario" value="nao">
+                    <label for="aniversario-nao">Não</label>
+                </div>
+            </div>
+
+            <button id="quiz-submit-btn">Verificar Minha Opção</button>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://www.caixa.gov.br/fgts/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Visitar a Página Oficial do FGTS
+            </a>
+        </div>
+
+        <h2>Perguntas Frequentes sobre o FGTS 2025</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Posso ter direito a mais de um tipo de saque? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer"><p>Não. É preciso escolher entre Saque-Aniversário e Saque-Rescisão, por exemplo. Cada modalidade tem suas regras.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quem está aposentado pode sacar tudo? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer"><p>Sim. Trabalhadores aposentados podem retirar o valor total do FGTS.</p></div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer id="footer-placeholder"></footer>
+<script src="js/main.js"></script>
+
+<script>
+document.getElementById('quiz-submit-btn').addEventListener('click', function() {
+    const situacao = document.getElementById('situacao-trabalho').value;
+    const aniversario = document.querySelector('input[name="aniversario"]:checked');
+    const resultadoDiv = document.getElementById('quiz-result');
+
+    if (situacao === "" || !aniversario) {
+        alert('Por favor, responda a todas as perguntas.');
+        return;
+    }
+
+    let resultado = '';
+    let classeResultado = '';
+
+    if (situacao === 'demitido' && aniversario.value === 'nao') {
+        resultado = 'Você provavelmente tem direito ao <strong>Saque-Rescisão</strong>, que permite sacar o saldo integral da conta mais a multa de 40%.';
+        classeResultado = 'result-success';
+    } else if (situacao === 'demitido' && aniversario.value === 'sim') {
+        resultado = 'Atenção! Por ter aderido ao Saque-Aniversário, você não pode sacar o saldo total, mas tem direito à multa de 40% paga pela empresa.';
+        classeResultado = 'result-warning';
+    } else if (situacao === 'trabalhando' && aniversario.value === 'sim') {
+        resultado = 'Você pode fazer o <strong>Saque-Aniversário</strong> uma vez ao ano, no seu mês de nascimento.';
+        classeResultado = 'result-info';
+    } else if (situacao === 'aposentado') {
+        resultado = 'Parabéns! Ao se aposentar, você pode sacar o valor integral de todas as suas contas do FGTS.';
+        classeResultado = 'result-success';
+    } else {
+        resultado = 'Na sua situação, o saque do saldo total do FGTS só é permitido em casos específicos, como compra de imóvel, doenças graves ou aposentadoria.';
+        classeResultado = 'result-info';
+    }
+
+    resultadoDiv.innerHTML = `<h3>Sua Opção Provável</h3><p>${resultado}</p>`;
+    resultadoDiv.className = classeResultado;
+    resultadoDiv.style.display = 'block';
+});
+
+// FAQ
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        const isActive = button.classList.contains('active');
+
+        faqQuestions.forEach(otherButton => {
+            otherButton.classList.remove('active');
+            otherButton.nextElementSibling.style.maxHeight = 0;
+            otherButton.querySelector('i').classList.remove('fa-minus');
+            otherButton.querySelector('i').classList.add('fa-plus');
+        });
+
+        if (!isActive) {
+            button.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+        }
+    });
+});
+</script>
+</body>
+</html>
