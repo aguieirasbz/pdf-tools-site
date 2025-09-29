@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imposto de Renda 2025: Guia Completo Para a Sua Declaração</title>
+<meta name="description" content="Tudo sobre o Imposto de Renda 2025! Saiba quem precisa declarar, veja a tabela de alíquotas, documentos necessários e um passo a passo para não cair na malha fina.">
+
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+<link href="[https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    .blog-post-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+    }
+    .blog-post-container h1 {
+        font-size: 2.4rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    .post-meta {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--light-gray);
+        padding-bottom: 15px;
+    }
+    .post-meta span { margin-right: 15px; }
+    .blog-post-container h2 {
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--primary);
+    }
+    .blog-post-container p, .blog-post-container li {
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .blog-post-container ul, .blog-post-container ol {
+        padding-left: 20px;
+    }
+    .blog-post-container a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .blog-post-container a:hover {
+        text-decoration: underline;
+    }
+    .cta-box {
+        background-color: rgba(210, 51, 63, 0.05);
+        border: 2px solid rgba(210, 51, 63, 0.1);
+        border-radius: var(--border-radius);
+        padding: 25px;
+        margin: 30px 0;
+    }
+    .cta-box h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--primary-dark);
+    }
+    .featured-image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        margin-bottom: 25px;
+    }
+
+            /* ======================== */
+            /* == ESTILOS PARA O QUIZ == */
+            /* ======================== */
+            #quiz-bolsa-familia {
+                background-color: #f8f9fa;
+                border: 1px solid var(--light-gray);
+                border-radius: var(--border-radius);
+                padding: 30px;
+                margin: 30px 0;
+            }
+            .quiz-question {
+                margin-bottom: 25px;
+            }
+            .quiz-question label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .quiz-question input[type="number"] {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid var(--light-gray);
+                border-radius: var(--border-radius);
+                font-size: 1rem;
+            }
+            .quiz-options input[type="radio"] {
+                margin-right: 5px;
+            }
+            .quiz-options label {
+                display: inline-block;
+                margin-right: 20px;
+                font-weight: 400;
+            }
+            #quiz-submit-btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+            #quiz-result {
+                display: none; /* Começa escondido */
+                margin-top: 25px;
+                padding: 20px;
+                border-radius: var(--border-radius);
+                border: 1px solid transparent;
+                text-align: center;
+            }
+            #quiz-result h3 {
+                margin-top: 0;
+                font-size: 1.5rem;
+            }
+            /* Estilos para os diferentes tipos de resultado */
+            .result-success {
+                background-color: #d4edda;
+                border-color: #c3e6cb;
+                color: #155724;
+            }
+            .result-warning {
+                background-color: #fff3cd;
+                border-color: #ffeeba;
+                color: #856404;
+            }
+            .result-info {
+                background-color: #d1ecf1;
+                border-color: #bee5eb;
+                color: #0c5460;
+            }
+
+            /* ============================ *//* ======================== */
+            /* === ESTILOS PARA A FAQ === */
+            /* ======================== */
+            .faq-container {
+                margin-top: 30px;
+            }
+            .faq-item {
+                border-bottom: 1px solid var(--light-gray);
+            }
+            .faq-question {
+                width: 100%;
+                background: none;
+                border: none;
+                padding: 20px 0;
+                text-align: left;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--dark);
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .faq-question:hover {
+                color: var(--primary);
+            }
+            .faq-question .fa-plus, .faq-question .fa-minus {
+                color: var(--primary);
+            }
+            .faq-answer {
+                padding: 0 10px 20px 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            .faq-answer p {
+                margin-bottom: 0;
+            }
+</style>
+
+
+</head>
+<body>
+<header id="header-placeholder"></header>
+
+
+<main>
+    <div class="blog-post-container">
+        <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?q=80&w=400&auto=format&fit=crop" 
+        alt="Imposto de Renda 2025"
+        class="featured-image">
+        <h1>Imposto de Renda 2025: Guia Completo Para a Sua Declaração</h1>
+
+        <div class="post-meta">
+            <span><i class="fas fa-user"></i> Por Equipe PDF TRUE</span>
+            <span><i class="fas fa-calendar-alt"></i> Publicado em 28 de setembro de 2025</span>
+        </div>
+
+        <p>A temporada de declaração do Imposto de Renda chegou, e com ela, muitas dúvidas. Você sabe se precisa declarar? Conhece as novas regras para 2025? Ficar em dia com o Leão pode parecer complicado, mas não precisa ser um bicho de sete cabeças.</p>
+        <p>Este guia foi criado para te ajudar a entender todo o processo, desde a separação dos documentos até o envio da declaração e o acompanhamento da restituição. Vamos descomplicar o IRPF 2025 juntos?</p>
+
+        <h2>Quem Precisa Declarar o Imposto de Renda em 2025?</h2>
+        <p>A Receita Federal estabelece critérios que definem a obrigatoriedade da declaração. Se você se encaixa em qualquer uma das situações abaixo, referente ao ano de 2024, precisa prestar contas ao Leão:</p>
+        <ul>
+            <li>Recebeu rendimentos tributáveis (salários, aluguéis, aposentadoria) acima de R$ 30.639,90.</li>
+            <li>Obteve rendimentos isentos, não tributáveis ou tributados exclusivamente na fonte (FGTS, herança, poupança) superiores a R$ 200.000,00.</li>
+            <li>Teve receita bruta em atividade rural superior a R$ 153.199,50.</li>
+            <li>Possuía, em 31 de dezembro de 2024, bens e direitos (imóveis, veículos) com valor total superior a R$ 800.000,00.</li>
+            <li>Realizou operações em bolsas de valores, de mercadorias, de futuros e assemelhadas.</li>
+        </ul>
+
+        <h2>Documentos Essenciais para a Declaração</h2>
+        <p>A organização é sua maior aliada. Antes de começar a preencher, separe todos os documentos necessários para evitar erros e agilizar o processo. A lista básica inclui:</p>
+        <ul>
+            <li><strong>Documentos Pessoais:</strong> RG, CPF, título de eleitor e comprovante de residência.</li>
+            <li><strong>Informes de Rendimentos:</strong> Das empresas onde trabalhou, do INSS (para aposentados), de bancos e corretoras.</li>
+            <li><strong>Comprovantes de Despesas Dedutíveis:</strong> Recibos de gastos com saúde, educação, pensão alimentícia e doações.</li>
+            <li><strong>Documentos de Bens e Direitos:</strong> Escrituras de imóveis, documentos de veículos e extratos de contas e investimentos.</li>
+        </ul>
+        
+        <div class="cta-box">
+            <h3><i class="fas fa-file-pdf"></i> Dica de Ouro: Junte Seus Comprovantes em um PDF!</h3>
+            <p>Recebeu informes e recibos em vários arquivos de imagem? Simplifique! Use nossa ferramenta gratuita para <a href="#">juntar vários JPGs em um único PDF</a>. Isso facilita o arquivamento e a consulta durante a declaração.</p>
+        </div>
+
+        <h2>Tabela Progressiva do IRPF 2025</h2>
+        <p>O cálculo do imposto é feito com base na tabela progressiva. Quanto maior a renda, maior a alíquota. Para 2025, a tabela mensal é a seguinte:</p>
+        <ul>
+            <li><strong>Até R$ 2.259,20:</strong> Isento (Alíquota 0%)</li>
+            <li><strong>De R$ 2.259,21 até R$ 2.826,65:</strong> 7,5%</li>
+            <li><strong>De R$ 2.826,66 até R$ 3.751,05:</strong> 15%</li>
+            <li><strong>De R$ 3.751,06 até R$ 4.664,68:</strong> 22,5%</li>
+            <li><strong>Acima de R$ 4.664,68:</strong> 27,5%</li>
+        </ul>
+
+        <h2>Passo a Passo Para Declarar seu Imposto de Renda</h2>
+        <p>Com os documentos em mãos, o processo fica mais simples. Você pode declarar pelo programa da Receita Federal no computador, pelo site ou pelo aplicativo "Meu Imposto de Renda".</p>
+        <ol>
+            <li><strong>Baixe o programa:</strong> Acesse o site da <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer">Receita Federal</a> e faça o download do programa gerador da declaração.</li>
+            <li><strong>Escolha o tipo de declaração:</strong> Você pode iniciar uma declaração em branco, importar dados do ano anterior ou usar a declaração pré-preenchida (a mais recomendada).</li>
+            <li><strong>Preencha as fichas:</strong> Informe seus dados pessoais, dependentes, rendimentos, pagamentos, bens e dívidas. Seja minucioso para não esquecer nada.</li>
+            <li><strong>Escolha o modelo de tributação:</strong> Ao final, o programa mostrará qual modelo é mais vantajoso: por <strong>deduções legais</strong> (se tiver muitos gastos dedutíveis) ou <strong>simplificado</strong> (com desconto padrão de 20%).</li>
+            <li><strong>Envie a declaração:</strong> Revise tudo com atenção e, se não houver pendências, transmita a declaração para a Receita Federal. Guarde o recibo de entrega!</li>
+        </ol>
+
+        <div class="cta-box">
+            <h3><i class="fas fa-tools"></i> Precisando editar seus documentos?</h3>
+            <p>Às vezes, um informe de rendimentos vem com páginas extras ou você precisa destacar uma informação. No <strong>PDF TRUE</strong>, você pode <a href="dividir-pdf.html">dividir PDFs</a>, <a href="editar-pdf.html">editar</a> ou até <a href="proteger-pdf.html">proteger com senha</a> seus arquivos fiscais. Explore nossas ferramentas gratuitas!</p>
+        </div>
+
+        <h2><i class="fas fa-question-circle"></i> Quiz Rápido: Preciso Declarar?</h2>
+    <p>Responda a 3 perguntas rápidas para ter uma ideia se você precisa declarar o Imposto de Renda em 2025. Lembre-se, este quiz é apenas uma simulação e não substitui a consulta às regras oficiais.</p>
+
+    <div id="quiz-bolsa-familia">
+        <div class="quiz-question">
+            <label for="renda-total">1. Qual foi o total dos seus rendimentos tributáveis em 2024? (Salários, pró-labore, aluguéis, etc.)</label>
+            <input type="number" id="renda-total" placeholder="Ex: 35000">
+        </div>
+
+        <div class="quiz-question">
+            <label for="bens-direitos">2. O valor total dos seus bens e direitos em 31/12/2024 (imóveis, carros, saldo em conta) era superior a R$ 800.000?</label>
+            <div class="quiz-options">
+                <input type="radio" id="bens-sim" name="bens" value="sim">
+                <label for="bens-sim">Sim</label>
+                <input type="radio" id="bens-nao" name="bens" value="nao" checked>
+                <label for="bens-nao">Não</label>
+            </div>
+        </div>
+
+        <div class="quiz-question">
+            <label for="renda-isenta">3. Você recebeu mais de R$ 200.000 em rendimentos isentos? (Ex: indenização, doação, lucros de poupança)</label>
+            <div class="quiz-options">
+                <input type="radio" id="isento-sim" name="isento" value="sim">
+                <label for="isento-sim">Sim</label>
+                <input type="radio" id="isento-nao" name="isento" value="nao" checked>
+                <label for="isento-nao">Não</label>
+            </div>
+        </div>
+
+        <button id="quiz-submit-btn" class="btn btn-primary btn-lg">Verificar Obrigatoriedade</button>
+
+        <div id="quiz-result">
+            </div>
+    </div>
+
+    <h2><i class="fas fa-question"></i> Perguntas Frequentes sobre o IRPF</h2>
+
+
+<div class="faq-container"\>
+<div class="faq-item"\>
+<button class="faq-question">
+<span>O que é a declaração pré-preenchida e vale a pena usar?</span>
+<i class="fas fa-plus"></i>
+</button>
+<div class="faq-answer"\>
+<p>É um modelo que já vem com várias informações preenchidas pela Receita Federal, com base em dados de empresas, bancos e médicos. Vale muito a pena, pois agiliza o processo e reduz a chance de erros. Além disso, quem a utiliza tem prioridade na restituição\!\</p\>
+</div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        <span>Perdi o prazo de entrega. E agora?</span>
+        <i class="fas fa-plus"></i>
+    </button>
+    <div class="faq-answer">
+        <p>Se você perder o prazo, deve entregar a declaração o quanto antes. Haverá uma multa por atraso, com valor mínimo de R$ 165,74, podendo chegar a 20% do imposto devido. Quanto mais rápido entregar, menor será o impacto no seu bolso.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <button class="faq-question">
+        <span>Como sei se tenho direito à restituição?</span>
+        <i class="fas fa-plus"></i>
+    </button>
+    <div class="faq-answer">
+        <p>Você terá direito à restituição se, após o preenchimento de todos os rendimentos e deduções, o programa calcular que você pagou mais imposto ao longo do ano do que deveria. O próprio programa mostrará o valor a restituir no final. O pagamento é feito em lotes, de maio a setembro.</p>
+    </div>
+</div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            <span>Posso incluir meus pais como dependentes?</span>
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+            <p>Sim, é possível incluir pais, avós e bisavós como dependentes, desde que eles não tenham recebido rendimentos (tributáveis ou não) superiores a R$ 24.511,92 no ano-calendário de 2024. Lembre-se que, ao incluí-los, você também deve declarar os rendimentos e bens deles.</p>
+        </div>
+    </div>
+</div>
+    <h2>Conclusão</h2>
+    <p>Declarar o Imposto de Renda 2025 é uma obrigação cívica que exige atenção e organização. Usar a declaração pré-preenchida, reunir os documentos com antecedência e revisar todas as informações são os segredos para uma entrega tranquila e sem riscos de cair na malha fina.</p>
+    <p>Esperamos que este guia tenha esclarecido suas principais dúvidas. Agora é hora de colocar a mão na massa e ficar em dia com suas obrigações fiscais!</p>
+        
+    </div>
+
+    
+</main>
+
+<footer id="footer-placeholder"></footer>
+<script src="js/main.js"></script>
+
+</body>
+<script>
+document.getElementById('quiz-submit-btn').addEventListener('click', function() {
+const rendaTotal = parseFloat(document.getElementById('renda-total').value) || 0;
+const bens = document.querySelector('input[name="bens"]:checked').value;
+const isento = document.querySelector('input[name="isento"]:checked').value;
+
+    let resultado = '';
+    let classeResultado = 'result-info';
+
+    if (rendaTotal > 30639.90 || bens === 'sim' || isento === 'sim') {
+        resultado = '<strong>Atenção:</strong> Com base nas suas respostas, é muito provável que você precise declarar o Imposto de Renda em 2025. Recomendamos reunir seus documentos e consultar as regras completas.';
+        classeResultado = 'result-warning';
+    } else if (rendaTotal > 0 && rendaTotal <= 30639.90) {
+        resultado = 'Pelas suas respostas, você pode não ser obrigado a declarar apenas pelo critério da renda. No entanto, existem outras regras (como operações em bolsa). É importante verificar todos os critérios de obrigatoriedade no site da Receita Federal.';
+        classeResultado = 'result-info';
+    } else {
+        resultado = '<strong>Alívio:</strong> Com base nas informações fornecidas, parece que você não se enquadra nos principais critérios de obrigatoriedade para declarar o Imposto de Renda. Mesmo assim, confirme se não há outras condições que se apliquem a você.';
+        classeResultado = 'result-success';
+    }
+    
+    const resultadoDiv = document.getElementById('quiz-result');
+    resultadoDiv.innerHTML = `<h3>Resultado do Quiz</h3><p>${resultado}</p>`;
+    resultadoDiv.className = classeResultado;
+    resultadoDiv.style.display = 'block';
+});
+
+    // ===================================================================
+    // ======================= LÓGICA DA FAQ =============================
+    // ===================================================================
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            const isActive = button.classList.contains('active');
+
+            // Fecha todos os outros
+            faqQuestions.forEach(otherButton => {
+                if (otherButton !== button) {
+                    otherButton.classList.remove('active');
+                    otherButton.nextElementSibling.style.maxHeight = 0;
+                    otherButton.querySelector('i').classList.remove('fa-minus');
+                    otherButton.querySelector('i').classList.add('fa-plus');
+                }
+            });
+
+            // Abre ou fecha o clicado
+            if (!isActive) {
+                button.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                button.classList.remove('active');
+                answer.style.maxHeight = 0;
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        });
+    });
+
+
+</script>
+
+</html>
