@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Assine documentos PDF online adicionando uma imagem da sua assinatura em páginas específicas. Ferramenta segura que funciona diretamente no seu navegador.">
-    <title>Assinar PDF com Imagem | PDF TRUE</title>
+    <meta name="description" content="Gire as páginas do seu documento PDF. Corrija a orientação de páginas em 90, 180 ou 270 graus de forma simples e rápida.">
+    <title>Girar PDF - Girar Páginas de PDF | PDF TRUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -13,8 +13,8 @@
 
     <style>
         :root {
-            --primary-color: #eb0e0e;
-            --secondary-color: #e90606;
+            --primary-color: #ff000d;
+            --secondary-color: #ec0f1a;
             --light-gray: #f8f9fa;
             --white: #ffffff;
             --danger-color: #dc3545;
@@ -47,6 +47,22 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             padding: 40px;
         }
+        .upload-area {
+            border: 3px dashed #ddd;
+            border-radius: 10px;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            position: relative;
+        }
+        .upload-area:hover, .upload-area.active {
+            background-color: #f0f8ff;
+            border-color: var(--primary-color);
+        }
+        .upload-area .fas { font-size: 50px; color: var(--primary-color); margin-bottom: 20px; }
+        .file-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+        
         .tool-options {
             margin-top: 30px;
             padding: 20px;
@@ -55,24 +71,22 @@
         }
         .tool-options h3 { margin-top: 0; color: var(--primary-color); }
         .form-group {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 15px;
         }
-        .form-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .form-group label {
             display: block;
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
-        .form-group input[type="file"], .form-group input[type="text"] {
+        .form-group select, .form-group input[type="text"] {
             width: 100%;
             padding: 8px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            box-sizing: border-box;
         }
-        .radio-group label {
-            margin-right: 20px;
+         .radio-group label {
+            margin-right: 15px;
             font-weight: normal;
         }
         #specific-pages-input {
@@ -82,7 +96,7 @@
         .tool-actions { text-align: center; margin-top: 30px; }
         .btn { display: inline-block; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: 500; text-decoration: none; color: var(--white); transition: background-color 0.3s, transform 0.2s; }
         .btn-primary { background-color: var(--primary-color); }
-        .btn-primary:hover { background-color: #b3000f; }
+        .btn-primary:hover { background-color: #0056b3; }
         .btn:disabled { background-color: var(--secondary-color); cursor: not-allowed; }
         #tool-btn { font-size: 1.2rem; padding: 15px 40px; }
 
@@ -96,46 +110,53 @@
         <section class="tool-hero">
             <div class="container">
                 <div class="tool-hero-content">
-                    <h1><i class="fas fa-signature"></i> Assinar PDF</h1>
-                    <p>Assine uma ou mais páginas do seu documento PDF.</p>
+                    <h1><i class="fas fa-redo"></i> Girar PDF</h1>
+                    <p>Gire páginas específicas do seu documento PDF no ângulo que desejar.</p>
                 </div>
             </div>
         </section>
         <div class="container tool-container-wrapper">
             <div class="tool-main">
-                 <div class="form-group">
-                    <label for="pdf-input"><i class="fas fa-file-pdf"></i> 1. Selecione o arquivo PDF</label>
-                    <input id="pdf-input" type="file" accept=".pdf">
+                <div class="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Arraste e solte seu PDF aqui</h3>
+                    <p>ou</p>
+                    <a class="btn btn-primary">Selecionar arquivo</a>
+                    <input id="tool-input" type="file" class="file-input" accept=".pdf">
+                    <p id="file-info" style="margin-top: 15px; color: var(--secondary-color);"></p>
                 </div>
 
-                <div class="form-group">
-                    <label for="signature-input"><i class="fas fa-signature"></i> 2. Selecione a imagem da assinatura (PNG)</label>
-                    <input id="signature-input" type="file" accept="image/png">
-                </div>
-
-                <div class="tool-options">
-                    <h3><i class="fas fa-cog"></i> 3. Opções de Assinatura</h3>
+                 <div class="tool-options">
+                    <h3><i class="fas fa-cog"></i> Opções de Rotação</h3>
+                    <div class="form-group">
+                        <label for="rotation-angle">Girar em:</label>
+                        <select id="rotation-angle">
+                            <option value="90">90° (sentido horário)</option>
+                            <option value="180">180° (de cabeça para baixo)</option>
+                            <option value="270">270° (sentido anti-horário)</option>
+                        </select>
+                    </div>
                      <div class="form-group">
-                        <label>Em quais páginas deseja inserir a assinatura?</label>
+                        <label>Quais páginas girar?</label>
                         <div class="radio-group">
                             <input type="radio" id="all-pages" name="page-selection" value="all" checked>
-                            <label for="all-pages">Todas as páginas</label>
+                            <label for="all-pages">Todas</label>
                             
-                            <input type="radio" id="first-page" name="page-selection" value="first">
-                            <label for="first-page">Apenas a primeira</label>
+                            <input type="radio" id="even-pages" name="page-selection" value="even">
+                            <label for="even-pages">Pares</label>
                             
-                            <input type="radio" id="last-page" name="page-selection" value="last">
-                            <label for="last-page">Apenas a última</label>
+                            <input type="radio" id="odd-pages" name="page-selection" value="odd">
+                            <label for="odd-pages">Ímpares</label>
 
                             <input type="radio" id="specific-pages" name="page-selection" value="specific">
-                            <label for="specific-pages">Páginas específicas</label>
+                            <label for="specific-pages">Específicas</label>
                         </div>
                         <input type="text" id="specific-pages-input" placeholder="Ex: 1, 3, 5-8" style="display: none;">
                     </div>
                 </div>
-
+                
                 <div class="tool-actions">
-                    <button id="tool-btn" class="btn btn-primary btn-lg">ASSINAR DOCUMENTO</button>
+                    <button id="tool-btn" class="btn btn-primary btn-lg">GIRAR PDF</button>
                 </div>
             </div>
         </div>
@@ -150,11 +171,9 @@
             setTimeout(() => { messageDiv.remove(); }, 4000);
         }
 
-        // Função para interpretar a seleção de páginas do usuário
         function parsePageSelection(selection, totalPages) {
-            const pagesToSign = new Set();
+            const pagesToProcess = new Set();
             if (!selection) return [];
-
             const parts = selection.split(',');
             for (const part of parts) {
                 const trimmedPart = part.trim();
@@ -162,82 +181,81 @@
                     const [start, end] = trimmedPart.split('-').map(num => parseInt(num, 10));
                     if (!isNaN(start) && !isNaN(end) && start <= end) {
                         for (let i = start; i <= end; i++) {
-                            if (i > 0 && i <= totalPages) pagesToSign.add(i - 1); // Converte para índice 0
+                            if (i > 0 && i <= totalPages) pagesToProcess.add(i - 1);
                         }
                     }
                 } else {
                     const pageNum = parseInt(trimmedPart, 10);
                     if (!isNaN(pageNum) && pageNum > 0 && pageNum <= totalPages) {
-                        pagesToSign.add(pageNum - 1); // Converte para índice 0
+                        pagesToProcess.add(pageNum - 1);
                     }
                 }
             }
-            return Array.from(pagesToSign);
+            return Array.from(pagesToProcess);
         }
 
-        async function handleSign(pdfFile, signatureFile, options) {
-            const { PDFDocument } = PDFLib;
+        async function handleRotate(file, options) {
+            const { PDFDocument, degrees } = PDFLib;
 
-            const pdfBytes = await pdfFile.arrayBuffer();
-            const signatureBytes = await signatureFile.arrayBuffer();
-
+            const pdfBytes = await file.arrayBuffer();
             const pdfDoc = await PDFDocument.load(pdfBytes);
-            const signatureImage = await pdfDoc.embedPng(signatureBytes);
-            
             const totalPages = pdfDoc.getPageCount();
-            let pagesToModify = [];
+            let pagesToRotate = [];
 
-            switch (options.selectionMode) {
+            switch (options.pageMode) {
                 case 'all':
-                    pagesToModify = Array.from({ length: totalPages }, (_, i) => i);
+                    pagesToRotate = Array.from({ length: totalPages }, (_, i) => i);
                     break;
-                case 'first':
-                    pagesToModify = [0];
+                case 'even':
+                    pagesToRotate = Array.from({ length: totalPages }, (_, i) => i).filter(i => (i + 1) % 2 === 0);
                     break;
-                case 'last':
-                    pagesToModify = [totalPages - 1];
+                case 'odd':
+                    pagesToRotate = Array.from({ length: totalPages }, (_, i) => i).filter(i => (i + 1) % 2 !== 0);
                     break;
                 case 'specific':
-                    pagesToModify = parsePageSelection(options.specificPages, totalPages);
-                    if (pagesToModify.length === 0) {
+                    pagesToRotate = parsePageSelection(options.specificPages, totalPages);
+                    if (pagesToRotate.length === 0) {
                         throw new Error('Nenhuma página válida foi especificada. Verifique o formato (ex: 1, 3-5).');
                     }
                     break;
             }
 
-            for (const pageIndex of pagesToModify) {
-                if (pageIndex < 0 || pageIndex >= totalPages) continue;
-
-                const page = pdfDoc.getPages()[pageIndex];
-                const { width, height } = page.getSize();
-
-                // Define as dimensões e a posição da assinatura (canto inferior direito)
-                const sigWidth = 150;
-                const sigHeight = (sigWidth / signatureImage.width) * signatureImage.height;
-                const margin = 40;
-
-                page.drawImage(signatureImage, {
-                    x: width - sigWidth - margin,
-                    y: margin,
-                    width: sigWidth,
-                    height: sigHeight,
-                });
-            }
+            pagesToRotate.forEach(pageIndex => {
+                const page = pdfDoc.getPage(pageIndex);
+                const currentRotation = page.getRotation().angle;
+                page.setRotation(degrees(currentRotation + options.angle));
+            });
 
             const modifiedPdfBytes = await pdfDoc.save();
             const blob = new Blob([modifiedPdfBytes], { type: 'application/pdf' });
-            saveAs(blob, `assinado-${pdfFile.name}`);
-            showUserMessage('PDF assinado com sucesso!', 'success');
+            saveAs(blob, `girado-${file.name}`);
+            showUserMessage('PDF girado com sucesso!', 'success');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const toolBtn = document.getElementById('tool-btn');
-            const pdfInput = document.getElementById('pdf-input');
-            const signatureInput = document.getElementById('signature-input');
+            const fileInput = document.getElementById('tool-input');
+            const fileInfo = document.getElementById('file-info');
+            const uploadArea = document.querySelector('.upload-area');
             const pageSelectionRadios = document.querySelectorAll('input[name="page-selection"]');
             const specificPagesInput = document.getElementById('specific-pages-input');
+            
+            uploadArea.addEventListener('click', () => fileInput.click());
+            uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('active'); });
+            uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('active'));
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('active');
+                if (e.dataTransfer.files.length > 0) {
+                    fileInput.files = e.dataTransfer.files;
+                    fileInput.dispatchEvent(new Event('change'));
+                }
+            });
 
-            // Mostra ou esconde o campo de texto para páginas específicas
+            fileInput.addEventListener('change', () => {
+                fileInfo.textContent = fileInput.files.length > 0 ? `Arquivo: ${fileInput.files[0].name}` : '';
+            });
+
             pageSelectionRadios.forEach(radio => {
                 radio.addEventListener('change', () => {
                     specificPagesInput.style.display = radio.value === 'specific' ? 'block' : 'none';
@@ -245,11 +263,11 @@
             });
 
             toolBtn.addEventListener('click', async () => {
-                if (pdfInput.files.length === 0) return showUserMessage('Por favor, selecione o arquivo PDF.', 'error');
-                if (signatureInput.files.length === 0) return showUserMessage('Por favor, selecione a imagem da assinatura.', 'error');
+                if (fileInput.files.length === 0) return showUserMessage('Por favor, selecione um arquivo PDF.', 'error');
                 
                 const options = {
-                    selectionMode: document.querySelector('input[name="page-selection"]:checked').value,
+                    angle: parseInt(document.getElementById('rotation-angle').value, 10),
+                    pageMode: document.querySelector('input[name="page-selection"]:checked').value,
                     specificPages: specificPagesInput.value,
                 };
                 
@@ -258,13 +276,15 @@
                 toolBtn.disabled = true;
 
                 try {
-                    await handleSign(pdfInput.files[0], signatureInput.files[0], options);
+                    await handleRotate(fileInput.files[0], options);
                 } catch (e) {
                     showUserMessage('Ocorreu um erro: ' + e.message, 'error');
                     console.error(e);
                 } finally {
                     toolBtn.textContent = originalText;
                     toolBtn.disabled = false;
+                    fileInput.value = '';
+                    fileInfo.textContent = '';
                 }
             });
         });

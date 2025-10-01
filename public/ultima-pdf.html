@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gire as páginas do seu documento PDF. Corrija a orientação de páginas em 90 graus (sentido horário) de forma simples e rápida.">
-    <title>Rodar PDF - Girar Páginas de PDF | PDF TRUE</title>
+    <meta name="description" content="Organize seu PDF removendo páginas. Exclua a última página de um documento PDF com esta ferramenta simples e segura.">
+    <title>Deletar Última página PDF - Remover Páginas | PDF TRUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -13,20 +13,19 @@
 </head>
 <body>
     <header id="header-placeholder"></header>
+
     <div class="tool-page">
-        <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-redo"></i> Rodar PDF</h1><p>Gire todas as páginas do seu documento PDF em 90 graus.</p></div></div></section>
+        <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-sort"></i> Ultima página PDF</h1><p>Exemplo: Deletar a última página de um PDF.</p></div></div></section>
         <div class="container tool-container-wrapper">
             <div class="tool-main">
                 <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="tool-input" type="file" class="file-input" accept=".pdf"><p id="file-info" style="margin-top: 15px; color: var(--gray);"></p></div>
-                <div class="tool-actions"><button id="tool-btn" class="btn btn-primary btn-lg">RODAR PDF 90°</button></div>
+                <div class="tool-actions"><button id="tool-btn" class="btn btn-primary btn-lg">DELETAR ÚLTIMA PÁGINA</button></div>
             </div>
-            <div class="tool-sidebar"><div class="info-section"><h3>Como Rodar um PDF</h3><div class="steps"><div class="step"><div class="step-number">1</div><h4>Carregue</h4><p>Escolha o arquivo PDF.</p></div><div class="step"><div class="step-number">2</div><h4>Processe</h4><p>Clique em "Rodar PDF 90°".</p></div><div class="step"><div class="step-number">3</div><h4>Baixe</h4><p>Seu PDF rotacionado será baixado.</p></div></div></div></div>
         </div>
     </div>
     
-        <footer id="footer-placeholder"></footer>
-        <script src="js/main.js"></script>  
-
+   <footer id="footer-placeholder"></footer>
+    <script src="js/main.js"></script>
 
     <script src="js/pdf-lib-functions.js"></script>
     <script>
@@ -54,7 +53,7 @@
                 toolBtn.disabled = true;
 
                 try {
-                    await handleRotate(fileInput.files[0]);
+                    await handleOrganize_deleteLastPage(fileInput.files[0]);
                 } catch (e) {
                     showUserMessage('Ocorreu um erro: ' + e.message, 'error');
                     console.error(e);

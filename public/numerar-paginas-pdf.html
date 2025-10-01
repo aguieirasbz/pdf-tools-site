@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Edite arquivos PDF adicionando texto personalizado. Uma ferramenta flexível para modificar o conteúdo de um PDF no seu navegador.">
-    <title>Adciona Texto PDF - Adicionar Texto Personalizado | PDF TRUE</title>
+    <meta name="description" content="Adicione números de página em arquivos PDF de forma fácil e customizável. Escolha posição, formato, estilo e mais.">
+    <title>Numerar Páginas PDF | PDF TRUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -13,8 +13,8 @@
 
     <style>
         :root {
-            --primary-color: #ff0015;
-            --secondary-color: #e61313;
+            --primary-color: #ff000d;
+            --secondary-color: #f30f2d;
             --light-gray: #f8f9fa;
             --white: #ffffff;
             --danger-color: #dc3545;
@@ -77,17 +77,16 @@
             align-items: center;
         }
         .form-group label {
-            flex-basis: 150px;
+            flex-basis: 200px;
             margin-right: 15px;
             font-weight: 500;
         }
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group input, .form-group select {
             flex: 1;
             padding: 8px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-        .form-group textarea { resize: vertical; min-height: 60px; }
         .form-group input[type="color"] { padding: 4px; min-height: 35px; }
 
         .tool-actions { text-align: center; margin-top: 30px; }
@@ -107,8 +106,8 @@
         <section class="tool-hero">
             <div class="container">
                 <div class="tool-hero-content">
-                    <h1><i class="fas fa-edit"></i>Adciona Texto  PDF</h1>
-                    <p>Adicione textos personalizados ao seu documento PDF.</p>
+                    <h1><i class="fas fa-list-ol"></i> Numerar Páginas PDF</h1>
+                    <p>Adicione números de página ao seu documento PDF com facilidade.</p>
                 </div>
             </div>
         </section>
@@ -124,47 +123,49 @@
                 </div>
                 
                 <div class="tool-options">
-                    <h3><i class="fas fa-cog"></i> Configurações do Texto</h3>
+                    <h3><i class="fas fa-cog"></i> Opções de Numeração</h3>
                     <div class="form-group">
-                        <label for="custom-text">Texto a Adicionar:</label>
-                        <textarea id="custom-text" placeholder="Digite seu texto aqui...">Este é o meu texto personalizado!</textarea>
+                        <label for="position">Posição do número:</label>
+                        <select id="position">
+                            <option value="bottom-center">Rodapé, ao centro</option>
+                            <option value="bottom-right">Rodapé, à direita</option>
+                            <option value="bottom-left">Rodapé, à esquerda</option>
+                            <option value="top-center">Cabeçalho, ao centro</option>
+                            <option value="top-right">Cabeçalho, à direita</option>
+                            <option value="top-left">Cabeçalho, à esquerda</option>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="font-size">Tamanho da Fonte:</label>
-                        <input type="number" id="font-size" value="24" min="1">
-                    </div>
-                    <div class="form-group">
-                        <label for="font-color">Cor da Fonte:</label>
-                        <input type="color" id="font-color" value="#ff0000">
-                    </div>
-                    <div class="form-group">
-                        <label for="text-position">Posição do Texto:</label>
-                        <select id="text-position">
-                            <option value="top-left">Canto Superior Esquerdo</option>
-                            <option value="top-center">Topo ao Centro</option>
-                            <option value="top-right">Canto Superior Direito</option>
-                            <option value="middle-center">Centro da Página</option>
-                            <option value="bottom-left">Canto Inferior Esquerdo</option>
-                            <option value="bottom-center">Base ao Centro</option>
-                            <option value="bottom-right">Canto Inferior Direito</option>
+                     <div class="form-group">
+                        <label for="format">Formato:</label>
+                        <select id="format">
+                            <option value="{p}">{p} (ex: 5)</option>
+                            <option value="{p} / {t}">{p} / {t} (ex: 5 / 12)</option>
+                            <option value="Página {p}">Página {p} (ex: Página 5)</option>
+                            <option value="Página {p} de {t}">Página {p} de {t} (ex: Página 5 de 12)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="page-number">Número da Página:</label>
-                        <input type="number" id="page-number" value="1" min="1">
+                        <label for="start-page">Iniciar na página:</label>
+                        <input type="number" id="start-page" value="1" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="font-size">Tamanho da Fonte:</label>
+                        <input type="number" id="font-size" value="12" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="font-color">Cor da Fonte:</label>
+                        <input type="color" id="font-color" value="#000000">
                     </div>
                 </div>
 
                 <div class="tool-actions">
-                    <button id="tool-btn" class="btn btn-primary btn-lg">ADICIONAR TEXTO AO PDF</button>
+                    <button id="tool-btn" class="btn btn-primary btn-lg">NUMERAR PDF</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        const { PDFDocument, rgb, StandardFonts } = PDFLib;
-
         function showUserMessage(message, type = 'success') {
             const messageDiv = document.createElement('div');
             messageDiv.textContent = message;
@@ -175,62 +176,63 @@
 
         function hexToRgb(hex) {
             const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-            return result ? {
-                r: parseInt(result[1], 16) / 255,
-                g: parseInt(result[2], 16) / 255,
-                b: parseInt(result[3], 16) / 255,
-            } : { r: 0, g: 0, b: 0 }; // Retorna preto como padrão se a conversão falhar
+            return result ? { r: parseInt(result[1], 16)/255, g: parseInt(result[2], 16)/255, b: parseInt(result[3], 16)/255 } : { r: 0, g: 0, b: 0 };
         }
         
-        async function addTextToPdf(file, options) {
-            if (!options.text.trim()) {
-                throw new Error('O campo de texto não pode estar vazio.');
-            }
+        async function addPageNumbersToPdf(file, options) {
+            // ***** INÍCIO DA CORREÇÃO *****
+            // A linha abaixo foi movida para DENTRO desta função.
+            // Isso garante que a biblioteca PDFLib esteja totalmente carregada antes de tentarmos usá-la.
+            const { PDFDocument, rgb, StandardFonts } = PDFLib;
+            // ***** FIM DA CORREÇÃO *****
 
             const existingPdfBytes = await file.arrayBuffer();
             const pdfDoc = await PDFDocument.load(existingPdfBytes);
             const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
             
-            const pageIndex = options.pageNumber - 1;
-            if (pageIndex < 0 || pageIndex >= pdfDoc.getPageCount()) {
-                throw new Error(`Página ${options.pageNumber} inválida. O PDF tem ${pdfDoc.getPageCount()} páginas.`);
+            const totalPages = pdfDoc.getPageCount();
+            const pages = pdfDoc.getPages();
+
+            if (options.startPage > totalPages) {
+                 throw new Error(`A página inicial (${options.startPage}) é maior que o total de páginas (${totalPages}).`);
             }
             
-            const page = pdfDoc.getPages()[pageIndex];
-            const { width, height } = page.getSize();
-            const textWidth = helveticaFont.widthOfTextAtSize(options.text, options.fontSize);
+            for (let i = options.startPage - 1; i < totalPages; i++) {
+                const currentPageNumber = i + 1;
+                const page = pages[i];
+                const { width, height } = page.getSize();
+                
+                const numberText = options.format
+                    .replace('{p}', currentPageNumber)
+                    .replace('{t}', totalPages);
+                    
+                const textWidth = helveticaFont.widthOfTextAtSize(numberText, options.fontSize);
+                const colorComponents = hexToRgb(options.color);
+                
+                let x, y;
+                const margin = 30;
 
-            let x, y;
-            const margin = 50;
+                switch (options.position) {
+                    case 'top-left':      x = margin; y = height - margin; break;
+                    case 'top-center':    x = (width - textWidth) / 2; y = height - margin; break;
+                    case 'top-right':     x = width - textWidth - margin; y = height - margin; break;
+                    case 'bottom-left':   x = margin; y = margin; break;
+                    case 'bottom-center': x = (width - textWidth) / 2; y = margin; break;
+                    case 'bottom-right':  x = width - textWidth - margin; y = margin; break;
+                }
 
-            switch (options.position) {
-                case 'top-center':      x = (width - textWidth) / 2; y = height - margin; break;
-                case 'top-right':       x = width - textWidth - margin; y = height - margin; break;
-                case 'middle-center':   x = (width - textWidth) / 2; y = height / 2; break;
-                case 'bottom-left':     x = margin; y = margin; break;
-                case 'bottom-center':   x = (width - textWidth) / 2; y = margin; break;
-                case 'bottom-right':    x = width - textWidth - margin; y = margin; break;
-                case 'top-left':
-                default:                x = margin; y = height - margin; break;
+                page.drawText(numberText, {
+                    x, y,
+                    font: helveticaFont,
+                    size: options.fontSize,
+                    color: rgb(colorComponents.r, colorComponents.g, colorComponents.b),
+                });
             }
-
-            // ***** INÍCIO DA CORREÇÃO *****
-            // 1. Converte o HEX para um objeto com componentes r, g, b
-            const colorComponents = hexToRgb(options.color);
-            
-            // 2. Usa a função rgb() da pdf-lib para criar o objeto de cor correto
-            page.drawText(options.text, {
-                x, y,
-                font: helveticaFont,
-                size: options.fontSize,
-                color: rgb(colorComponents.r, colorComponents.g, colorComponents.b),
-            });
-            // ***** FIM DA CORREÇÃO *****
 
             const pdfBytes = await pdfDoc.save();
             const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-            saveAs(blob, `editado-${file.name}`);
-            showUserMessage('PDF editado com sucesso!', 'success');
+            saveAs(blob, `numerado-${file.name}`);
+            showUserMessage('PDF numerado com sucesso!', 'success');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -239,9 +241,7 @@
             const fileInfo = document.getElementById('file-info');
             const uploadArea = document.querySelector('.upload-area');
 
-            uploadArea.addEventListener('click', (e) => {
-                if(e.target.tagName !== 'INPUT') fileInput.click();
-            });
+            uploadArea.addEventListener('click', (e) => { if(e.target.tagName !== 'INPUT') fileInput.click(); });
             uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('active'); });
             uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('active'));
             uploadArea.addEventListener('drop', (e) => {
@@ -263,11 +263,11 @@
                 }
                 
                 const options = {
-                    text: document.getElementById('custom-text').value,
+                    position: document.getElementById('position').value,
+                    format: document.getElementById('format').value,
+                    startPage: parseInt(document.getElementById('start-page').value, 10),
                     fontSize: parseInt(document.getElementById('font-size').value, 10),
                     color: document.getElementById('font-color').value,
-                    position: document.getElementById('text-position').value,
-                    pageNumber: parseInt(document.getElementById('page-number').value, 10),
                 };
 
                 const originalText = toolBtn.textContent;
@@ -275,7 +275,7 @@
                 toolBtn.disabled = true;
 
                 try {
-                    await addTextToPdf(fileInput.files[0], options);
+                    await addPageNumbersToPdf(fileInput.files[0], options);
                 } catch (e) {
                     showUserMessage(e.message, 'error');
                     console.error(e);
