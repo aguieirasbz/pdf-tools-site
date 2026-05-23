@@ -110,6 +110,7 @@ async function handleWatermark(file, text) {
 async function handleJpgToPdf(files) {
     showUserMessage('Convertendo imagens para PDF... Por favor, aguarde.');
     const newPdfDoc = await PDFDocument.create();
+    const a4Portrait = { width: 595.28, height: 841.89 };
     for (const file of files) {
         const fileBytes = await file.arrayBuffer();
         let image;
@@ -121,8 +122,23 @@ async function handleJpgToPdf(files) {
             showUserMessage(`Formato de arquivo não suportado: ${file.type}. Pulando.`, 'warn');
             continue;
         }
-        const page = newPdfDoc.addPage([image.width, image.height]);
-        page.drawImage(image, { x: 0, y: 0, width: image.width, height: image.height });
+        const isLandscape = image.width > image.height;
+        const pageWidth = isLandscape ? a4Portrait.height : a4Portrait.width;
+        const pageHeight = isLandscape ? a4Portrait.width : a4Portrait.height;
+        const page = newPdfDoc.addPage([pageWidth, pageHeight]);
+        const margin = 24;
+        const maxWidth = pageWidth - margin * 2;
+        const maxHeight = pageHeight - margin * 2;
+        const ratio = Math.min(maxWidth / image.width, maxHeight / image.height);
+        const imageWidth = image.width * ratio;
+        const imageHeight = image.height * ratio;
+
+        page.drawImage(image, {
+            x: (pageWidth - imageWidth) / 2,
+            y: (pageHeight - imageHeight) / 2,
+            width: imageWidth,
+            height: imageHeight
+        });
     }
     if (newPdfDoc.getPageCount() === 0) {
         return showUserMessage('Nenhuma imagem compatível (JPG/PNG) foi encontrada para converter.', 'error');
@@ -133,26 +149,56 @@ async function handleJpgToPdf(files) {
 }
 
 async function handlePdfToJpg(file) {
-    showUserMessage('Convertendo PDF para JPG... Por favor, aguarde.');
+    showUserMessage('Convertendo PDF para JPG em alta qualidade... Por favor, aguarde.');
     const fileBytes = await file.arrayBuffer();
     const pdfDoc = await pdfjsLib.getDocument({ data: fileBytes }).promise;
     if (pdfDoc.numPages === 0) {
         return showUserMessage('Este PDF não tem páginas para converter.', 'error');
     }
-    const pageNumber = 1;
-    const page = await pdfDoc.getPage(pageNumber);
-    const scale = 2.0;
-    const viewport = page.getViewport({ scale: scale });
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-    const renderContext = { canvasContext: context, viewport: viewport };
-    await page.render(renderContext).promise;
-    canvas.toBlob(function(blob) {
-        saveAs(blob, `pagina_${pageNumber}_de_${file.name.replace('.pdf', '.jpg')}`);
-        showUserMessage('PDF convertido para JPG com sucesso!');
-    }, 'image/jpeg', 0.9);
+    const baseName = file.name.replace(/\.pdf$/i, '').replace(/[\\/:*?"<>|]/g, '-');
+    const scale = 3.0;
+    const jpegQuality = 0.95;
+    const zip = pdfDoc.numPages > 1 && typeof JSZip !== 'undefined' ? new JSZip() : null;
+
+    for (let pageNumber = 1; pageNumber <= pdfDoc.numPages; pageNumber++) {
+        const page = await pdfDoc.getPage(pageNumber);
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d', { alpha: false });
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+
+        context.fillStyle = '#ffffff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        await page.render({
+            canvasContext: context,
+            viewport,
+            background: 'white'
+        }).promise;
+
+        const blob = await new Promise((resolve) => {
+            canvas.toBlob(resolve, 'image/jpeg', jpegQuality);
+        });
+
+        if (!blob) {
+            throw new Error(`Nao foi possivel gerar a imagem da pagina ${pageNumber}.`);
+        }
+
+        const fileName = `${baseName}-pagina-${String(pageNumber).padStart(3, '0')}.jpg`;
+        if (zip) {
+            zip.file(fileName, blob);
+        } else {
+            saveAs(blob, fileName);
+        }
+    }
+
+    if (zip) {
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        saveAs(zipBlob, `${baseName}-jpg.zip`);
+    }
+
+    showUserMessage('PDF convertido para JPG com sucesso!');
 }
 
 async function handleSign(pdfFile, signatureFile) {

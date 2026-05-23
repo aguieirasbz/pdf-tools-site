@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Converta a primeira página de um arquivo PDF para uma imagem JPG de alta qualidade. Extraia páginas de PDF como imagens de forma segura.">
+    <meta name="description" content="Converta todas as páginas de um arquivo PDF para imagens JPG de alta qualidade. Extraia páginas de PDF como imagens de forma segura.">
     <title>Converter PDF para JPG | PDF TRUE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script>
         if (typeof pdfjsLib !== 'undefined') {
@@ -21,7 +22,7 @@
     <header id="header-placeholder"></header>
 
     <div class="tool-page">
-        <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-file-image"></i> PDF para JPG</h1><p>Converta a primeira página do seu PDF em uma imagem JPG.</p></div></div></section>
+        <section class="tool-hero"><div class="container"><div class="tool-hero-content"><h1><i class="fas fa-file-image"></i> PDF para JPG</h1><p>Converta todas as páginas do seu PDF em imagens JPG de alta qualidade.</p></div></div></section>
         <div class="container tool-container-wrapper">
             <div class="tool-main">
                 <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3>Arraste e solte seu PDF aqui</h3><p>ou</p><a class="btn btn-primary btn-lg">Selecionar arquivo</a><input id="tool-input" type="file" class="file-input" accept=".pdf"><p id="file-info" style="margin-top: 15px; color: var(--gray);"></p></div>
