@@ -1,0 +1,6 @@
+.admin-articles { margin-top: 30px; }
+.admin-articles h2 { margin-bottom: 14px; }
+.admin-article-list { display: grid; gap: 10px; }
+.admin-article-list article { background: #fff; border-radius: 8px; box-shadow: var(--shadow); padding: 16px; display: flex; gap: 16px; justify-content: space-between; align-items: center; }
+.admin-article-list small { display: block; color: var(--gray); margin-top: 5px; }
+@media (max-width: 640px) { .admin-article-list article { align-items: flex-start; flex-direction: column; } }

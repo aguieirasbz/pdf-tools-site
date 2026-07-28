@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home-tools.css">
+    <link rel="stylesheet" href="css/tools-catalog.css">
+    <link rel="stylesheet" href="css/home-news.css">
 </head>
 <body>
 
@@ -25,35 +28,68 @@
         </div>
     </section>
 
-    <main class="main-content">
-        <section class="tools-section" id="ferramentas">
+    <main class="tools-catalog-page">
+        <section class="catalog-hero" id="ferramentas">
             <div class="container">
                 <div class="section-title">
-                    <h2>Nossas Ferramentas Essenciais</h2>
+                    <h1>Todas as ferramentas PDF</h1>
+                    <p>Escolha uma ferramenta para trabalhar com seus documentos diretamente no navegador.</p>
                 </div>
-                <div class="tools-grid">
+            </div>
+        </section>
+        <section class="catalog-section">
+            <div class="container">
+                <div id="home-tools-catalog" class="tools-catalog-grid"></div>
+                <div class="tools-grid" hidden>
+                    <a href="html-para-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-code"></i></div><h3>HTML para PDF</h3><p>Converta HTML em PDF.</p></div></a>
+                    <a href="cortar-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-crop-alt"></i></div><h3>Cortar PDF</h3><p>Ajuste a área visível das páginas.</p></div></a>
+                    <a href="pdf-avancado.html?tool=scan" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-camera"></i></div><h3>Scan para PDF</h3><p>Use a câmera com corte automático.</p></div></a>
+                    <a href="pdf-avancado.html?tool=ocr" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-eye"></i></div><h3>OCR PDF</h3><p>Crie PDF com texto pesquisável.</p></div></a>
+                    <a href="formularios-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-wpforms"></i></div><h3>Formulários PDF</h3><p>Preencha campos existentes no PDF.</p></div></a>
+                    <a href="pdf-avancado.html?tool=comparar" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-columns"></i></div><h3>Comparar PDF</h3><p>Compare visualmente dois documentos.</p></div></a>
+                    <a href="pdf-para-excel.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-excel"></i></div><h3>PDF para Excel</h3><p>Exporte texto do PDF para XLSX.</p></div></a>
+                    <a href="powerpoint-para-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-powerpoint"></i></div><h3>PowerPoint para PDF</h3><p>Converta slides PPTX em PDF.</p></div></a>
+                    <a href="excel-para-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-excel"></i></div><h3>Excel para PDF</h3><p>Converta planilhas XLSX em PDF.</p></div></a>
+                    <a href="word-para-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-word"></i></div><h3>Word para PDF</h3><p>Converta documentos DOCX em PDF.</p></div></a>
+                    <a href="pdf-para-word.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-word"></i></div><h3>PDF para Word</h3><p>Extraia texto do PDF em DOCX editável.</p></div></a>
+                    <a href="extrair-paginas-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-export"></i></div><h3>Extrair Páginas</h3><p>Crie um PDF somente com as páginas selecionadas.</p></div></a>
+                    <a href="pdf-avancado.html?tool=organizar" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-sort"></i></div><h3>Organizar PDF</h3><p>Reordene e remova páginas por miniaturas.</p></div></a>
+                    <a href="pdf-para-texto.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-alt"></i></div><h3>PDF para Texto</h3><p>Extraia o texto do seu PDF para TXT.</p></div></a>
+                    <a href="adicionar-imagem-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-image"></i></div><h3>Adicionar Imagem</h3><p>Insira logo, carimbo ou imagem no PDF.</p></div></a>
+                    <a href="comprimir-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-compress-arrows-alt"></i></div><h3>Comprimir PDF</h3><p>Reduza o tamanho do documento.</p></div></a>
                     <a href="juntar-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-object-group"></i></div><h3>Juntar PDF</h3><p>Mescle vários arquivos PDF em um único documento.</p></div></a>
                     <a href="dividir-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-cut"></i></div><h3>Dividir PDF</h3><p>Extraia páginas ou separe um PDF em vários arquivos.</p></div></a>
                   <!--  <a href="proteger-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-lock"></i></div><h3>Proteger PDF</h3><p>Adicione senha e criptografia a um arquivo PDF.</p></div></a>-->
                   <!--<a href="desbloquear-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-unlock"></i></div><h3>Desbloquear PDF</h3><p>Remova a senha de proteção de um arquivo PDF.</p></div></a> -->
                     <a href="girar-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-redo"></i></div><h3>Rodar PDF</h3><p>Gire as páginas do seu PDF da forma que precisar.</p></div></a>
-                    <a href="marca-dagua-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-tint"></i></div><h3>Marca d'água</h3><p>Adicione um texto ou imagem como marca d'água em seu PDF.</p></div></a>
+                    <a href="pdf-avancado.html?tool=marca" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-tint"></i></div><h3>Marca d'água</h3><p>Personalize texto, cor e posição.</p></div></a>
                     <a href="jpg-para-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="far fa-file-image"></i></div><h3>JPG para PDF</h3><p>Converta imagens JPG e PNG em um arquivo PDF.</p></div></a>
                     <a href="pdf-para-jpg.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-file-image"></i></div><h3>PDF para JPG</h3><p>Converta páginas de PDF em imagens JPG de alta qualidade.</p></div></a>
                     <a href="assinar-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-signature"></i></div><h3>Assinar PDF</h3><p>Adicione sua assinatura eletrônica a documentos PDF.</p></div></a>
-                    <a href="editar-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-edit"></i></div><h3>Adicionar texto PDF</h3><p>Adicione texto, imagens e anotações a um PDF.</p></div></a>
+                    <a href="pdf-avancado.html?tool=editor" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-edit"></i></div><h3>Editor PDF visual</h3><p>Adicione texto e cubra áreas visualmente.</p></div></a>
                     <a href="ultima-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-sort"></i></div><h3>Deletar Última página PDF</h3><p>Delete a última página de um PDF.</p></div></a>
-                    <a href="numerar-paginas-pdf.html" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-list-ol"></i></div><h3>Numerar Páginas PDF</h3><p>Adicione números de página em seu documento automaticamente.</p>
+                    <a href="pdf-avancado.html?tool=numerar" class="tool-card-link"><div class="tool-card"><div class="tool-icon"><i class="fas fa-list-ol"></i></div><h3>Numerar Páginas PDF</h3><p>Adicione números com opções avançadas.</p>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
         
-        <section class="features-section" style="background-color: white;">
+        <section class="features-section" id="noticias" style="background-color: white;">
         <div class="container">
             <div class="section-title">
-                <h2>Blog</h2>
+                <h2>Últimas notícias</h2>
+                <p style="color: var(--gray);">Informações recentes sobre programas, benefícios e serviços públicos.</p>
+            </div>
+            <div id="home-news-list" class="home-news-list" aria-live="polite">Carregando notícias...</div>
+            <div style="text-align: center; margin-top: 32px;"><a href="blog.php" class="btn btn-primary">Ver todas as notícias</a></div>
+        </div>
+        </section>
+
+        <section class="features-section" style="background-color: #f5f7fa;" hidden>
+        <div class="container">
+            <div class="section-title">
+                    <h2>Guias anteriores</h2>
                 <p style="color: var(--gray);">Guias e dicas para ajudar você com documentos e muito mais.</p>
             </div>
             
@@ -162,7 +198,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="blog.html" class="btn btn-primary">Ver todos os artigos</a>
+                <a href="blog.php" class="btn btn-primary">Ver todos os artigos</a>
             </div>
         </div>
     </section>
@@ -202,6 +238,10 @@
 
     <footer id="footer-placeholder"></footer>
     <script src="js/main.js"></script>
+    <script src="js/tools-catalog.js"></script>
+    <script src="js/home-tools-icons.js"></script>
+    <script src="js/tool-status.js"></script>
+    <script src="js/home-news.js"></script>
 
 </body>
 </html>

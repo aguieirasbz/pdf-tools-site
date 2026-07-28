@@ -180,8 +180,8 @@ header {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .tool-card-link {
@@ -190,6 +190,7 @@ header {
 }
 
 .tool-card {
+    position: relative;
     background-color: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -227,6 +228,34 @@ header {
 .tool-card p {
     color: var(--gray);
     font-size: 0.95rem;
+}
+
+/* Ferramentas que ainda estão em evolução recebem uma identificação clara. */
+.tool-card-link.is-beta .tool-card {
+    border: 2px dashed #f59e0b;
+    box-shadow: 0 5px 18px rgba(245, 158, 11, 0.16);
+}
+
+.tool-card-link.is-beta .tool-card:hover {
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.28);
+}
+
+.tool-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #fff3cd;
+    color: #8a5700;
+    border: 1px solid #f5c65b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+    .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* --- Landing Page: Features Section --- */

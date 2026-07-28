@@ -1,0 +1,109 @@
+/* Layout principal unificado com o catálogo de ferramentas. */
+.hero { display: none; }
+
+/* Impede que a grade antiga (mantida apenas como histórico no HTML) seja exibida. */
+.tools-grid[hidden] { display: none !important; }
+
+/* No index, o cabeçalho do catálogo usa a mesma estrutura de ferramentas.html. */
+#ferramentas.catalog-hero .section-title { margin-bottom: 0; }
+
+#ferramentas.tools-section {
+    padding: 58px 0 70px;
+    background: #f7f8fc;
+}
+
+#ferramentas .section-title {
+    margin-bottom: 38px;
+}
+
+#ferramentas .section-title h2 {
+    font-size: 2.35rem;
+}
+
+#ferramentas .section-title p {
+    margin-top: 10px;
+    color: var(--gray);
+    font-size: 1.08rem;
+}
+
+#ferramentas .tools-grid {
+    max-width: 1110px;
+    margin: 0 auto;
+    gap: 16px;
+}
+
+#ferramentas .tool-card {
+    min-height: 222px;
+    padding: 24px 20px;
+    border: 1px solid #dfe2eb;
+    border-radius: 14px;
+    box-shadow: none;
+    text-align: left;
+}
+
+#ferramentas .tool-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(210, 51, 63, .45);
+    box-shadow: 0 12px 24px rgba(31, 41, 55, .10);
+}
+
+#ferramentas .tool-icon {
+    width: 47px;
+    height: 47px;
+    margin: 0 0 18px;
+    border-radius: 10px;
+    font-size: 1.35rem;
+}
+
+/* Cores dos ícones no mesmo padrão da página de catálogo. */
+#ferramentas .tool-card:has(.fa-file-word) .tool-icon,
+#ferramentas .tool-card:has(.fa-file-alt) .tool-icon,
+#ferramentas .tool-card:has(.fa-columns) .tool-icon,
+#ferramentas .tool-card:has(.fa-signature) .tool-icon { background: #4b7fb5; }
+
+#ferramentas .tool-card:has(.fa-file-excel) .tool-icon,
+#ferramentas .tool-card:has(.fa-compress-arrows-alt) .tool-icon,
+#ferramentas .tool-card:has(.fa-eye) .tool-icon { background: #72aa51; }
+
+#ferramentas .tool-card:has(.fa-file-powerpoint) .tool-icon,
+#ferramentas .tool-card:has(.fa-cut) .tool-icon,
+#ferramentas .tool-card:has(.fa-camera) .tool-icon,
+#ferramentas .tool-card:has(.fa-file-export) .tool-icon { background: #ec7954; }
+
+#ferramentas .tool-card:has(.fa-code) .tool-icon,
+#ferramentas .tool-card:has(.fa-file-image) .tool-icon,
+#ferramentas .tool-card:has(.fa-image) .tool-icon { background: #d8b917; }
+
+#ferramentas .tool-card:has(.fa-edit) .tool-icon,
+#ferramentas .tool-card:has(.fa-tint) .tool-icon,
+#ferramentas .tool-card:has(.fa-list-ol) .tool-icon,
+#ferramentas .tool-card:has(.fa-wpforms) .tool-icon,
+#ferramentas .tool-card:has(.fa-crop-alt) .tool-icon,
+#ferramentas .tool-card:has(.fa-redo) .tool-icon { background: #a96297; }
+
+#ferramentas .tool-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 10px;
+}
+
+#ferramentas .tool-card p {
+    font-size: .82rem;
+    line-height: 1.5;
+}
+
+/* Mesmas cores oficiais dos ícones da página Ferramentas. */
+#ferramentas .tool-card .tool-icon.tone-red { background: #e95f4a; }
+#ferramentas .tool-card .tool-icon.tone-blue { background: #4b7fb5; }
+#ferramentas .tool-card .tool-icon.tone-green { background: #72aa51; }
+#ferramentas .tool-card .tool-icon.tone-purple { background: #a96297; }
+#ferramentas .tool-card .tool-icon.tone-yellow { background: #d8b917; }
+#ferramentas .tool-card .tool-icon.tone-orange { background: #ec7954; }
+
+@media (max-width: 768px) {
+    .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #ferramentas .section-title h2 { font-size: 1.9rem; }
+}
+
+@media (max-width: 576px) {
+    .tools-grid { grid-template-columns: 1fr; }
+}
